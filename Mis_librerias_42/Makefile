@@ -1,3 +1,4 @@
+
 NAME = libft.a
 
 SOURCES = del_content.c \
@@ -49,9 +50,9 @@ ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
 
-OBJTS = $(SOURCES:.c \=.o \)
+OBJTS = $(SOURCES:.c=.o)
 
-CC = gcc
+CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 

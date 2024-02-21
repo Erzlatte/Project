@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:07:43 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 21:16:41 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:21:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,7 @@ int main() {
             case 20:
                 printf("Busca una cadena dentro de otra: \n");
                 puts(str);
-                printf("La cadena: %p\n",ft_strnstr(str, b, 21));
+                printf("La cadena: %s\n",ft_strnstr(str, b, 21));
                 break;
             case 21:
                 printf("Busca una cadena dentro de otra: \n");
