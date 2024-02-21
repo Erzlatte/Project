@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:07:43 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 10:58:54 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:04:28 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int menu(void);
 
 char f(unsigned int i, char c)
 {
+    int P = i;
+    P = 0;
     char str;
     str = c + 1;
     return (str);
@@ -154,7 +156,7 @@ int main() {
             case 18:
                 printf("Busca en los byte indicados una coincidencia he imprime el resto de la cadena si la encuentra: \n");
                 puts(str);
-                printf("La cadena: %s\n",ft_memchr(str, ch, 5));
+                printf("La cadena: %p\n",ft_memchr(str, ch, 5));
                 break;
             case 19:
                 printf("Compara en byte indicado dentro de una cadena: \n");
@@ -221,34 +223,31 @@ int main() {
                 break;
             case 32:
                 lp = ft_lstnew("quecosas");
-                printf("%s\n", lp -> content);
+                printf("%p\n", lp -> content);
                 printf("%p\n", lp -> next);
                 printf("%p\n", lp);
                 break;
             case 33:
                 ft_lstadd_front(&lst, new);
-                printf("%s\n", lst -> content);
+                printf("%p\n", lst -> content);
                 t_list *lst = ft_lstnew("Hola");
                 t_list *new = ft_lstnew("Dan");
                 ft_lstadd_front(&lst, new);
-                printf("%s\n", lst -> content);
+                printf("%p\n", lst -> content);
                 int size = ft_lstsize(lst);
                 printf("%d\n", size);
-                /*t_list *empty_list = NULL;
-                int sizec = ft_lstsize(empty_list);
-                printf("%d\n", sizec);*/
                 break;
             case 34:
                 ft_lstadd_front(&lpt, neww);
-                printf("%s\n", lpt -> content);
+                printf("%p\n", lpt -> content);
                 ft_lstadd_front(&lpt, ft_lstnew("Dan"));
                 t_list *last_element = ft_lstlast(lpt);
-                printf("%s\n", last_element -> content);
+                printf("%p\n", last_element -> content);
                 break;
             case 35:
-                printf("%s\n", elem -> content);
+                printf("%p\n", elem -> content);
                 ft_lstdelone(elem, del_content);
-                printf("%s\n", elem -> content);
+                printf("%p\n", elem -> content);
                 break;
             case 36:
                 ft_lstadd_back(&lstt, ft_lstnew("Mal"));
@@ -261,7 +260,7 @@ int main() {
             case 38:
                 ft_lstadd_back(&elemto, ft_lstnew("Dan"));
                 t_list *new_lst = ft_lstmap(elemto, transform_content, del_content);
-                printf("%s\n", new_lst -> content);
+                printf("%p\n", new_lst -> content);
                 break;
             case 0:
                 if(opc == 0){

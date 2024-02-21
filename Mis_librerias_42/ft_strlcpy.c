@@ -6,14 +6,14 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:52:59 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 10:58:54 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/21 21:08:45 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 size_t ft_strlcpy(char *d, const char *s, size_t n){
-    int i;
+    unsigned int i;
     
     i = 0;
     if(n == 0){
