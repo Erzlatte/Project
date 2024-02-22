@@ -6,13 +6,13 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:00:44 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 10:58:54 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char* ft_strtrim(char const* s1, char const* set)
+char*   ft_strtrim(char const* s1, char const* set)
 {
     size_t    front;
     size_t    rear;
@@ -24,12 +24,18 @@ char* ft_strtrim(char const* s1, char const* set)
         front = 0;
         rear = ft_strlen(s1);
         while (s1[front] && ft_strchr(set, s1[front]))
+        {
             front++;
+        }
         while (s1[rear - 1] && ft_strchr(set, s1[rear - 1]) && rear > front)
+        {
             rear--;
+        }
         str = (char*)malloc(sizeof(char) * (rear - front + 1));
         if (str)
+        {
             ft_strlcpy(str, &s1[front], rear - front + 1);
+        }
     }
     return (str);
 }

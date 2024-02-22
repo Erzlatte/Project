@@ -6,12 +6,14 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 10:02:07 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 10:58:54 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_toupper(int c){
-    if (c >= 97 && c <= 122){
+int ft_toupper(int c)
+{
+    if (c >= 97 && c <= 122)
+    {
         c -= 32;
     }
     return (c);

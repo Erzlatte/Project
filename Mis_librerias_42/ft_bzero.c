@@ -6,17 +6,20 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:34:41 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 10:58:54 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_bzero(void *s, size_t n){
-    char *i;
+void t_bzero(void *s, size_t n)
+{
+    char    *i;
 
     i = s;
-    while(n){
+
+    while (n)
+    {
         *i = 0;
         i++;
         n--;

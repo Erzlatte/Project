@@ -6,21 +6,24 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 09:57:24 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 10:58:54 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strncpy(char *d, const char *s, size_t n){
+char    *ft_strncpy(char *d, const char *s, size_t n)
+{
     size_t i;
 
     i = 0;
-    while(i < n && s[i]){
+    while(i < n && s[i])
+    {
         d[i] = s[i];
         i++;
     }
-    while(i < n){
+    while(i < n)
+    {
         d[i] = '\0';
         i++;
     }

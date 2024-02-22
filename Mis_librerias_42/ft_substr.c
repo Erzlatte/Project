@@ -6,37 +6,44 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 10:01:10 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 10:58:54 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_substr(char const *s, unsigned int start,size_t len){
+char    *ft_substr(char const *s, unsigned int start,size_t len)
+{
     
     char *d;
     size_t i;
     size_t j;
     
-    if((d = (char*)malloc(sizeof(char) * (len + 1)))){
+    if((d = (char*)malloc(sizeof(char) * (len + 1))))
+    {
         i = 0;
         j = 0;
         
-        while (i < start){
+        while (i < start)
+        {
             i++;
         }
         
-        while (s[i] != '\0' && j < len){
+        while (s[i] != '\0' && j < len)
+        {
             d[j] = s[i];
             i++;
             j++;
         }
         
-        while(i < len){
+        while(i < len)
+        {
             d[i] = '\0';
             i++;
         }
-    } else {
+    }
+    else
+    {
         return (NULL);
     }
        
