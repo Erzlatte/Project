@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 10:07:43 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/21 21:21:47 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/23 10:21:37 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int main() {
     int a = 5;
     int z = 4;
     char **cadena;
-    char ñ[] = "Comozzestaszchaval";
+    char ml[] = "Comozzestaszchaval";
     int i;
     char str1[] = "bcd";
     char* str2;
@@ -191,7 +191,7 @@ int main() {
                 break;
             case 25:
                 i = 0;
-                cadena = ft_split(ñ, 'z');
+                cadena = ft_split(ml, 'z');
                 while (cadena[i]) {
                     printf("%s\n", cadena[i]);
                     i++;
@@ -268,7 +268,8 @@ int main() {
                 }
                 break;
         }
-    }while(opc != 0);
+    }
+    while(opc != 0);
     
     return 0;
 }
