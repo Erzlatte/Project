@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:10:34 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/28 19:54:04 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:08:10 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ typedef struct s_list
 	void	*content;
 	struct s_list	*next;
 }
-	t_list;
+t_list;
 
 t_list	*ft_lstnew(void *content);
 void	ft_lstadd_front(t_list **alst, t_list *new);

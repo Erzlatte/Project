@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:06:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/28 19:54:04 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:11:27 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,11 @@ char	**ft_split(char const *s, char c)
 			return (0);
 		z = 0;
 		while (z < k)
+		{
 			small[z] = s[i];
 			z++;
 			i++;
+		}
 		small[k] = '\0';
 		big[y] = small;
 		y++;

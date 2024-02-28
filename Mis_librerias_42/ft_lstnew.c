@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:05:08 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 13:07:48 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/28 20:11:27 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*elt;
 
-	if (!(elt = (t_list*) malloc(sizeof(*elt))))
+	if (!(elt = (t_list *)malloc(sizeof(*elt))))
 	{
 		return (NULL);
 	}
