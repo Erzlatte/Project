@@ -5,21 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/24 09:48:25 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 11:34:11 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:07:28 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:24:34 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-    int        i;
+	int		i;
 
-    i = 0;
-    while (s[i])
-    {
-        f(i, &s[i]);
-        i++;
-    }
+	i = 0;
+	while (s[i])
+	{
+		f(i, &s[i]);
+		i++;
+	}
 }

@@ -5,27 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 10:37:08 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:04:13 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:42:04 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_lstadd_back(t_list **alst, t_list *new)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-    t_list  *tmp;
+	t_list	*tmp;
 
-    if (alst)
-    {
-        if (*alst == NULL)
-        {
-            *alst = new;
-        }
-        else
-        {
-            tmp = ft_lstlast(*(alst));
-            tmp->next = new;
-        }
-    }
+	if (alst)
+	{
+		if (*alst == NULL)
+		{
+			*alst = new;
+		}
+		else
+		{
+			tmp = ft_lstlast(*(alst));
+			tmp->next = new;
+		}
+	}
 }

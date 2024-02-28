@@ -1,18 +1,6 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   del_content.c                                      :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 11:40:22 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/23 10:21:17 by dllera-d         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
-void    del_content(void *content)
+void	del_content(void *content)
 {
-    free(content);
+	free(content);
 }

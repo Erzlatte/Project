@@ -5,22 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 09:58:05 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:08:48 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 13:07:48 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-    if (n > ft_strlen(s1))
-    {
-        n = ft_strlen(s1) + 1;
-    }
-    if (n > ft_strlen(s2))
-    {
-        n = ft_strlen(s2) + 1;
-    }
-    return (ft_memcmp(s1, s2, n));
+	if (n > ft_strlen(s1))
+	{
+		n = ft_strlen(s1) + 1;
+	}
+	if (n > ft_strlen(s2))
+	{
+		n = ft_strlen(s2) + 1;
+	}
+	return (ft_memcmp(s1, s2, n));
 }

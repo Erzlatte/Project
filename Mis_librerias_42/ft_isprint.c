@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/10 09:39:09 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 11:34:11 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:03:54 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:54:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if((c >= 32 && c <= 126))
-    {
-        return (1);
-    }
-    return (0);
+	if ((c >= 32 && c <= 126))
+	{
+		return (1);
+	}
+	return (0);
 }

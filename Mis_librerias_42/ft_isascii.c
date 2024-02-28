@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 09:36:59 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:03:25 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:54:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+int	ft_isascii(int c)
 {
-    if((c >= 0 && c <= 127))
-    {
-        return (1);
-    }
-    return (0);
+	if ((c >= 0 && c <= 127))
+	{
+		return (1);
+	}
+	return (0);
 }

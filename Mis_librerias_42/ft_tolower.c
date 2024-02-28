@@ -5,16 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 10:01:38 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:09:56 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:52:40 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
-    if (c >= 65 && c <= 90)
-    {
-        c += 32;
-    }
-    return (c);
+	if (c >= 65 && c <= 90)
+	{
+		c += 32;
+	}
+	return (c);
 }

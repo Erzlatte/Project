@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 09:38:40 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 11:34:11 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:03:48 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:54:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
-    if((c >= 48 && c <= 57))
-    {
-        return (1);
-    }
-    return (0);
+	if ((c >= 48 && c <= 57))
+	{
+		return (1);
+	}
+	return (0);
 }

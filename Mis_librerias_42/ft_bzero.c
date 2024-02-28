@@ -5,23 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 09:34:41 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 12:48:02 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:01:16 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:24:34 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void t_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    char    *i;
+	char	*i;
 
-    i = s;
-
-    while (n)
-    {
-        *i = 0;
-        i++;
-        n--;
-    }
+	i = s;
+	while (n)
+	{
+		*i = 0;
+		i++;
+		n--;
+	}
 }

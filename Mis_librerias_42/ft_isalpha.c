@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/09 09:36:26 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/22 11:34:11 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:01:59 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/02/27 12:54:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+int	ft_isalpha(int c)
 {
-    if((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
-    {
-        return (1);
-    }
-    return (0);
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+	{
+		return (1);
+	}
+	return (0);
 }
