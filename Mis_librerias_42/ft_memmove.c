@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:05:53 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 12:59:35 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:11:12 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,22 @@
 
 void	*ft_memmove(void *d, const void *s, size_t n)
 {
-	char	*cpy;
+	void	*dest_ptr;
 
-	if (s == NULL || d == NULL)
+	dest_ptr = d;
+	if (!d && !s)
+		return (d);
+	if (d == s)
+		return (d);
+	if (d > s)
 	{
-		return (NULL);
+		while (n--)
+			((char *)d)[n] = ((char *)s)[n];
 	}
-	if (! (cpy = (char *)malloc(sizeof(char *) * n)))
+	else
 	{
-		return (NULL);
+		while (n--)
+			*(char *)d++ = *(char *)s++;
 	}
-	cpy = ft_strncpy(cpy, s, n);
-	d = (void *)ft_strncpy(d, cpy, n);
-	free(cpy);
-	return (d);
+	return (dest_ptr);
 }

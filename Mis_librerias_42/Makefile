@@ -6,15 +6,14 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 13:00:07 by dllera-d          #+#    #+#              #
-#    Updated: 2024/02/27 12:24:34 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/02/29 12:21:44 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SOURCES = ft_atoi.c \
+SRC = ft_atoi.c \
 ft_bzero.c \
-ft_count.c \
 ft_isalnum.c \
 ft_isalpha.c \
 ft_isascii.c \
@@ -32,7 +31,6 @@ ft_putnbr_fd.c \
 ft_putstr_fd.c \
 ft_split.c \
 ft_strchr.c \
-ft_strcmp.c \
 ft_striteri.c \
 ft_strjoin.c \
 ft_strlcat.c \
@@ -40,7 +38,6 @@ ft_strlcpy.c \
 ft_strlen.c \
 ft_strmapi.c \
 ft_strncmp.c \
-ft_strncpy.c \
 ft_strnstr.c \
 ft_strrchr.c \
 ft_strtrim.c \
@@ -48,7 +45,7 @@ ft_substr.c \
 ft_tolower.c \
 ft_toupper.c \
 
-SOURCESBONUS = ft_lstadd_back.c \
+SRCBONUS = ft_lstadd_back.c \
 ft_lstadd_front.c \
 ft_lstclear.c \
 ft_lstdelone.c \
@@ -58,9 +55,8 @@ ft_lstmap.c \
 ft_lstnew.c \
 ft_lstsize.c \
 
-OBJTS = $(SOURCES:.c=.o)
-BOBJTS = $(SOURCES:.c=.o)
-
+OBJTS = $(SRC:.c=.o)
+BOBJTS = $(SRCBONUS:.c=.o)
 
 CC = cc
 
@@ -80,10 +76,10 @@ bonus: $(BOBJTS)
 	$(CC) -c $(CFLAGS) $?
 
 ver:
-	echo $(OBJTS)	
+	echo $(OBJTS) $(BOBJTS)
 
 clean: 
-	$(RM) $(OBJTS)
+	$(RM) $(OBJTS) $(BOBJTS)
 
 fclean: clean
 	$(RM) $(NAME)
