@@ -6,47 +6,89 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:06:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/28 20:11:27 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/29 09:40:41 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	count_words(char const *s, char c)
+{
+	size_t	count;
+	size_t	i;
+
+	count = 0;
+	i = 0;
+	while (*(s + i))
+	{
+		if (*(s + i) != c)
+		{
+			count++;
+			while (*(s + i) && *(s + i) != c)
+				i++;
+		}
+		else if (*(s + i) == c)
+			i++;
+	}
+	return (count);
+}
+
+static size_t	get_word_len(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (*(s + i) && *(s + i) != c)
+		i++;
+	return (i);
+}
+
+static void	free_array(size_t i, char **array)
+{
+	while (i > 0)
+	{
+		i--;
+		free(*(array + i));
+	}
+	free(array);
+}
+
+static char	**split(char const *s, char c, char **array, size_t words_count)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	j = 0;
+	while (i < words_count)
+	{
+		while (*(s + j) && *(s + j) == c)
+			j++;
+		*(array + i) = ft_substr(s, j, get_word_len(&*(s + j), c));
+		if (!*(array + i))
+		{
+			free_array(i, array);
+			return (NULL);
+		}
+		while (*(s + j) && *(s + j) != c)
+			j++;
+		i++;
+	}
+	*(array + i) = NULL;
+	return (array);
+}
+
 char	**ft_split(char const *s, char c)
 {
-	int		i;
-	int		k;
-	int		y;
-	int		z;
-	char	*small;
-	char	**big;
+	char	**array;
+	size_t	words;
 
-	if (!(big = (char **)malloc((ft_count(s, c) + 1) * sizeof(*big))))
-		return (0);
-	i = 0;
-	y = 0;
-	while (42)
-	{
-		while (s[i] == c)
-			i++;
-		if (s[i] == '\0')
-			break ;
-		k = 0;
-		while (s[i + k] != '\0' && s[i + k] != c)
-			k++;
-		if (!(small = (char *)malloc((k + 1) * sizeof(char))))
-			return (0);
-		z = 0;
-		while (z < k)
-		{
-			small[z] = s[i];
-			z++;
-			i++;
-		}
-		small[k] = '\0';
-		big[y] = small;
-		y++;
-	}
-	big[y] = NULL;
-	return (big);
+	if (!s)
+		return (NULL);
+	words = count_words(s, c);
+	array = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!array)
+		return (NULL);
+	array = split(s, c, array, words);
+	return (array);
 }

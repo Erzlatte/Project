@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:10:34 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/28 20:08:10 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/02/29 09:40:41 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_putnbr_fd(int n, int fd);
 
 typedef struct s_list
 {
-	void	*content;
+	void			*content;
 	struct s_list	*next;
 }
 t_list;
