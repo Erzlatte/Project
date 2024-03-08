@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:10:34 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/08 09:50:41 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/08 10:16:02 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 int		ft_atoi(char *str);
+void	*ft_calloc(size_t count, size_t n);
+char	*ft_strdup(char const *src);
 char	*ft_substr(char const *s, unsigned int start, size_t n);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *s2);
