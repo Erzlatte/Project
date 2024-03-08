@@ -32,6 +32,7 @@ int main() {
 	int z = 4;
 	char **cadena;
 	char ml[] = "Comozzestaszchaval";
+	char newstr;
 	int i;
 	char str1[] = "bcd";
 	char* str2;
@@ -197,31 +198,38 @@ int main() {
 				printf("%s\n", ft_itoa(0));
 				break;
 			case 27:
+				printf("%d\n", ft_calloc(6, 3));
+				break;
+			case 28:
+				if ((newstr = ft_strdup(str)) != NULL)
+					printf("The new string is: %s\n", newstr);
+				break;
+			case 29:
 				str2 = ft_strmapi(str1, *f);
 				printf("%s\n", str2);
 				break;
-			case 28:
+			case 30:
 				ft_putchar_fd('a', 1);
 				printf("\n");
 				break;
-			case 29:
+			case 31:
 				ft_putstr_fd("hola", 1);
 				printf("\n");
 				break;
-			case 30:
+			case 32:
 				ft_putendl_fd("hola", 1);
 				break;
-			case 31:
+			case 33:
 				ft_putnbr_fd(-2147483648, 1);
 				printf("\n");
 				break;
-			case 32:
+			case 34:
 				lp = ft_lstnew("quecosas");
 				printf("%p\n", lp -> content);
 				printf("%p\n", lp -> next);
 				printf("%p\n", lp);
 				break;
-			case 33:
+			case 35:
 				ft_lstadd_front(&lst, new);
 				printf("%p\n", lst -> content);
 				t_list *lst = ft_lstnew("Hola");
@@ -231,27 +239,27 @@ int main() {
 				int size = ft_lstsize(lst);
 				printf("%d\n", size);
 				break;
-			case 34:
+			case 36:
 				ft_lstadd_front(&lpt, neww);
 				printf("%p\n", lpt -> content);
 				ft_lstadd_front(&lpt, ft_lstnew("Dan"));
 				t_list *last_element = ft_lstlast(lpt);
 				printf("%p\n", last_element -> content);
 				break;
-			case 35:
+			case 37:
 				printf("%p\n", elem -> content);
 				ft_lstdelone(elem, del_content);
 				printf("%p\n", elem -> content);
 				break;
-			case 36:
+			case 38:
 				ft_lstadd_back(&lstt, ft_lstnew("Mal"));
 				ft_lstclear(&lst, del_content);
 				break;
-			case 37:
+			case 39:
 				ft_lstadd_back(&lptt, ft_lstnew("Dan"));
 				ft_lstiter(lptt, print_content);
 				break;
-			case 38:
+			case 40:
 				ft_lstadd_back(&elemto, ft_lstnew("Dan"));
 				t_list *new_lst = ft_lstmap(elemto, transform_content, del_content);
 				printf("%p\n", new_lst -> content);
@@ -271,38 +279,8 @@ int menu(){
 	int opc;
 	do{
 		printf("Menú\n");
-		printf("1) ft_isalpha\n");
-		printf("2) ft_isdigit\n");
-		printf("3) ft_isalnum\n");
-		printf("4) ft_isascii\n");
-		printf("5) ft_isprint\n");
-		printf("6) ft_strlen\n");
-		printf("7) ft_memset\n");
-		printf("8) ft_bzero\n");
-		printf("9) ft_mencpy\n");
-		printf("10) ft_memmove\n");
-		printf("11) ft_strlcpy\n");
-		printf("12) ft_strlcat\n");
-		printf("13) ft_toupper\n");
-		printf("14) ft_tolower\n");
-		printf("15) ft_strchr\n");
-		printf("16) ft_strrchr\n");
-		printf("17) ft_strncmp\n");
-		printf("18) ft_memchr\n");
-		printf("19) ft_memcmp\n");
-		printf("20) ft_strnstr\n");
-		printf("21) ft_atoi\n");
-		printf("22) ft_isprint\n");
-		printf("23) ft_subtr\n");
-		printf("24) ft_strjoin\n");
-		printf("25) ft_strtrim\n");
-		printf("26) ft_split\n");
-		printf("27) ft_strmapi\n");
-		printf("28) ft_striteri\n");
-		printf("29) ft_putchar_fd\n");
-		printf("30) ft_putstr_fd\n");
-		printf("31) ft_puntendl_fd\n");
-		printf("32) ft_putnbr\n");
+		printf("Ordenados por la secuencia en la que salen en el pdf\n");
+		printf("Son un total de 40\n");
 		printf("0) Salir\n");
 
 		printf("Opción: ");

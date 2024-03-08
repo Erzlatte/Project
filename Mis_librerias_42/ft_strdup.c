@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 13:04:13 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/08 09:50:38 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/29 20:52:36 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/03/04 11:30:26 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+char	*ft_strdup(char const *src)
 {
-	t_list	*tmp;
+	char	*dest;
+	char	*start;
 
-	if (lst)
-	{
-		if (*lst == NULL)
-		{
-			*lst = new;
-		}
-		else
-		{
-			tmp = ft_lstlast(*(lst));
-			tmp->next = new;
-		}
-	}
+	dest = ft_lstnew(ft_strlen(src));
+	if (!dest)
+		return (NULL);
+	start = dest;
+	while (*src)
+		*dest++ = *src++;
+	*dest = '\0';
+	return (start);
 }
