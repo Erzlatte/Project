@@ -6,7 +6,7 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/26 13:00:07 by dllera-d          #+#    #+#              #
-#    Updated: 2024/02/29 12:21:44 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/03/12 10:38:00 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 
 SRC = ft_atoi.c \
 ft_bzero.c \
+ft_calloc.c \
 ft_isalnum.c \
 ft_isalpha.c \
 ft_isascii.c \
@@ -31,6 +32,7 @@ ft_putnbr_fd.c \
 ft_putstr_fd.c \
 ft_split.c \
 ft_strchr.c \
+ft_strdup.c \
 ft_striteri.c \
 ft_strjoin.c \
 ft_strlcat.c \
@@ -58,22 +60,17 @@ ft_lstsize.c \
 OBJTS = $(SRC:.c=.o)
 BOBJTS = $(SRCBONUS:.c=.o)
 
-CC = cc
-
-CFLAGS = -Wall -Wextra -Werror
+AR = ar -rv
 
 RM = rm -f
 
 all: $(NAME)
 
 $(NAME): $(OBJTS)
-	$(CC) $(OBJTS) -o $(NAME)
+	$(AR) $(NAME)  $(OBJTS)
 
 bonus: $(BOBJTS)
-	$(CC) $(BOBJTS) -o $(NAME)
-
-%.o: %.c
-	$(CC) -c $(CFLAGS) $?
+	$(AR) $(NAME)  $(BOBJTS)
 
 ver:
 	echo $(OBJTS) $(BOBJTS)

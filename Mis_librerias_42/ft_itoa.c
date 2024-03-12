@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:04:05 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 12:55:18 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/12 10:52:56 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_itoa(int n)
 
 	sign = n < 0;
 	count = digit_count(n) + sign;
-	result = (char *) malloc (sizeof (char) * (count + 1));
+	result = (char *)malloc(sizeof (char) * (count + 1));
 	if (!result)
 	{
 		return (NULL);

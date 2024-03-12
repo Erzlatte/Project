@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:52:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/04 11:30:26 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/12 10:43:18 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,22 @@
 
 char	*ft_strdup(char const *src)
 {
-	char	*dest;
-	char	*start;
+	char	*new;
+	int		i;
+	int		size;
 
-	dest = ft_lstnew(ft_strlen(src));
-	if (!dest)
+	size = 0;
+	while (src[size])
+		++size;
+	if (!(new = ft_calloc(sizeof(char) * (size + 1),
+				sizeof(char) * (size + 1))))
 		return (NULL);
-	start = dest;
-	while (*src)
-		*dest++ = *src++;
-	*dest = '\0';
-	return (start);
+	i = 0;
+	while (src[i])
+	{
+		new[i] = src[i];
+		i++;
+	}
+	new[i] = '\0';
+	return (new);
 }
