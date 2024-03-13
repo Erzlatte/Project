@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:05:14 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 12:52:40 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:34:40 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ int	ft_lstsize(t_list *lst)
 
 	count = 0;
 	temp = lst;
+	if (lst == NULL)
+	{
+		return (count);
+	}
 	while (temp->next != NULL)
 	{
 		count++;

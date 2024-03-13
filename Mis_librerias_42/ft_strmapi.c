@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:08:39 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/12 10:44:15 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:31:15 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (0);
 	}
 	len = ft_strlen(s);
-	if (!(str = (char *)ft_calloc(sizeof(char) *(len + 1),
-				sizeof(char) *(len + 1))))
+	str = (char *)ft_calloc(sizeof(char) *(len + 1), sizeof(char));
+	if (!str)
 	{
 		return (0);
 	}

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:09:39 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/12 10:21:33 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:38:33 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 	size_t	i;
 	size_t	j;
 
-	if ((d = (char *)ft_calloc(sizeof(char) *(n + 1), sizeof(char) *(n + 1))))
+	(d = (char *)ft_calloc(sizeof(char) *(n + 1), sizeof(char)));
+	if (d)
 	{
 		i = 0;
 		j = 0;
@@ -36,7 +37,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t n)
 			i++;
 		}
 	}
-	else
-		return (NULL);
 	return (d);
 }
