@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:05:20 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 12:58:30 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/15 13:39:21 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char			*string;
 
 	i = 0;
-	if (s == NULL)
-	{
-		return (NULL);
-	}
 	string = (void *)s;
 	while (i < n)
 	{

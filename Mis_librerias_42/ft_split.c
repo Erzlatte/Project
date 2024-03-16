@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:06:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/13 17:39:23 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/16 11:52:36 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ static size_t	count_words(char const *s, char c)
 	i = 0;
 	while (*(s + i))
 	{
-		if (*(s + i) != c)
+		if (*(s + i) == c && *(s + i))
+			i++;
+		else if (*(s + i) != c && *(s + i))
 		{
 			count++;
 			while (*(s + i) && *(s + i) != c)
 				i++;
 		}
-		else if (*(s + i) == c)
-			i++;
 	}
 	return (count);
 }
@@ -53,7 +53,7 @@ static void	free_array(size_t i, char **array)
 	free(array);
 }
 
-static char	**split(char const *s, char c, char **array, size_t words_count)
+static char	**split_fd(char const *s, char c, char **array, size_t words_count)
 {
 	size_t	i;
 	size_t	j;
@@ -86,9 +86,9 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	array = (char **)ft_calloc(sizeof(char *) * (words + 1), sizeof(char *));
+	array = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!array)
 		return (NULL);
-	array = split(s, c, array, words);
+	array = split_fd(s, c, array, words);
 	return (array);
 }

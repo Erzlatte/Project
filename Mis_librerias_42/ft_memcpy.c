@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:05:47 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 12:59:35 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/15 14:43:08 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *d, const void *s, size_t n)
 	char			*dst;
 	const char		*src;
 
-	if (s == NULL || d == NULL)
+	if (s == NULL && d == NULL)
 	{
 		return (NULL);
 	}

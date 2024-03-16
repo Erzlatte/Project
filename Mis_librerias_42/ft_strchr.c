@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:06:43 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 12:52:40 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/15 13:39:16 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,6 @@ char	*ft_strchr(const char *s, int c)
 	int	i;
 
 	i = 0;
-	if (s == NULL)
-	{
-		return (NULL);
-	}
 	while (s[i])
 	{
 		if (s[i] == (char)c)
