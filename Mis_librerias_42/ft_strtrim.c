@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:09:26 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/13 17:38:17 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/19 09:36:19 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ char	*ft_strtrim(char const *s1, char const *s2)
 		{
 			rear--;
 		}
-		str = (char *)ft_calloc(sizeof(char) *(rear - front + 1),
-				sizeof(char));
+		str = ft_calloc((rear - front + 1), sizeof(char));
 		if (str)
 		{
 			ft_strlcpy(str, &s1[front], rear - front + 1);

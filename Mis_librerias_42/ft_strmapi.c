@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:08:39 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/13 17:31:15 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/19 09:24:45 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	len;
+	size_t	n;
 	size_t	i;
 	char	*str;
 
@@ -23,13 +23,13 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	{
 		return (0);
 	}
-	len = ft_strlen(s);
-	str = (char *)ft_calloc(sizeof(char) *(len + 1), sizeof(char));
+	n = ft_strlen(s);
+	str = ft_calloc((n + 1), sizeof(char));
 	if (!str)
 	{
 		return (0);
 	}
-	while (i < len)
+	while (i < n)
 	{
 		str[i] = f(i, s[i]);
 		i++;

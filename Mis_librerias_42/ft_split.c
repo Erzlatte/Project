@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:06:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/16 11:52:36 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/19 09:05:46 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	array = (char **)malloc(sizeof(char *) * (words + 1));
+	array = ft_calloc((words + 1), sizeof(char *));
 	if (!array)
 		return (NULL);
 	array = split_fd(s, c, array, words);

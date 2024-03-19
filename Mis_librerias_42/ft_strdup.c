@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 20:52:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/03/13 17:29:53 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/03/19 09:10:11 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(char const *src)
 	size = 0;
 	while (src[size])
 		++size;
-	new = ft_calloc(sizeof(char) * (size + 1), sizeof(char));
+	new = ft_calloc((size + 1), sizeof(char));
 	if (!new)
 		return (NULL);
 	i = 0;
