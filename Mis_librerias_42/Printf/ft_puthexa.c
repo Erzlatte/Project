@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:00:49 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/04/10 17:53:29 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/04/25 11:29:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	ft_puthexa(unsigned long n, char format)
 	int				i;
 	unsigned int	base_len;
 
+	base = NULL;
 	if (format == 'x')
 		base = "0123456789abcdef";
 	else if (format == 'X')

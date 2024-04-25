@@ -6,7 +6,7 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 10:03:57 by dllera-d          #+#    #+#              #
-#    Updated: 2024/04/25 10:45:40 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/04/25 11:46:08 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ ft_strlen.c \
 
 OBJTS = $(SRC:.c=.o)
 
-AR = ar -rv
+AR = ar -rc
 
 CFLAGS = -Wall -Wextra -Werror
 
@@ -35,7 +35,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJTS)
-	$(AR) $(CFLAGS) $(OBJTS) -o $(NAME)
+	$(AR) $(NAME)  $(OBJTS)
 
 ver:
 	echo $(OBJTS)
