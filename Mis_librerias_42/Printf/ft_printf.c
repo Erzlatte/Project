@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 09:51:44 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/04/10 18:05:26 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/05/21 11:22:32 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ static int	ft_format(va_list args, const char format)
 	else if (format == '%')
 		return (ft_putchar('%'));
 	else
-		return (-1);
+		return (0);
 }
 
 int	ft_printf(const char *str, ...)
