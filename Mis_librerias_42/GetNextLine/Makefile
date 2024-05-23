@@ -6,7 +6,7 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/25 20:07:20 by dllera-d          #+#    #+#              #
-#    Updated: 2024/04/25 20:09:08 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/05/23 10:06:31 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ ft_strchr.c \
 ft_strcpy.c \
 ft_strchr.c \
 ft_strlen.c \
+get_next_line_utils.c \
 
 OBJTS = $(SRC:.c=.o)
 

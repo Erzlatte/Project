@@ -6,13 +6,13 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:24:34 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/05/23 09:23:26 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:58:37 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static size_t	find_next_line_break(char *str, size_t i)
+static size_t	find_next_line_jump(char *str, size_t i)
 {
 	char	*ptr;
 
@@ -33,16 +33,16 @@ static char	*create_substring(char *str)
 	i = 0;
 	j = 0;
 	if (!*str)
-		return (free(str), NULL);
+		return ((void)((free(str))), NULL);
 	i = find_next_line_break(str, i);
-	new_str = (char *)malloc((ft_strlen(str) - i) + 1);
+	new_str = malloc((ft_strlen(str) - i) + 1);
 	if (!new_str)
-		return (free(new_str), NULL);
+		return ((void)((free(str))), NULL);
 	while (*(str + i))
 		*(new_str + j++) = *(str + i++);
 	*(new_str + j) = '\0';
 	if (!*new_str)
-		return (free(str), free(new_str), NULL);
+		return ((void)((free(str))), (void)((free(new_str))), NULL);
 	free(str);
 	return (new_str);
 }
@@ -55,8 +55,8 @@ static char	*read_line(char *str)
 	i = 0;
 	if (!str || *str == '\0')
 		return (NULL);
-	i = find_next_line_break(str, i);
-	line = (char *)malloc(sizeof(char) * i + 1);
+	i = find_next_line_jump(str, i);
+	line = malloc(sizeof(char) * (i + 1));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -74,7 +74,7 @@ static char	*read_line(char *str)
 	return (line);
 }
 
-static char	*free_and_null(char *buff1, char *buff2)
+static char	*free_content(char *buff1, char *buff2)
 {
 	free(buff1);
 	free(buff2);
@@ -91,7 +91,7 @@ char	*get_next_line(int fd)
 	read_bytes = 1;
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX)
 		return (NULL);
-	read_content = (char *)malloc(sizeof(char) * BUFFER_SIZE + 1);
+	read_content = malloc(sizeof(char) * BUFFER_SIZE + 1);
 	if (!read_content)
 		return (NULL);
 	while (!(ft_strchr(read_buffer, '\n')) && read_bytes != 0)
@@ -99,7 +99,7 @@ char	*get_next_line(int fd)
 		read_bytes = read(fd, read_content, BUFFER_SIZE);
 		if (read_bytes == -1)
 		{
-			read_buffer = free_and_null(read_content, read_buffer);
+			read_buffer = free_content(read_content, read_buffer);
 			return (NULL);
 		}
 		*(read_content + read_bytes) = '\0';
