@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 09:51:44 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/05/21 11:22:32 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/05/22 22:00:17 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ static int	ft_format(va_list args, const char format)
 		ptr = va_arg(args, void *);
 		if (ptr)
 			return (ft_putaddress(ptr));
-		return (ft_putstr("0x0"));
+		return (ft_putstr("(nil)"));
 	}
 	else if (format == 'u')
 		return (ft_putunsigned(va_arg(args, unsigned int)));
 	else if (format == '%')
 		return (ft_putchar('%'));
 	else
-		return (0);
+		return (-1);
 }
 
 int	ft_printf(const char *str, ...)

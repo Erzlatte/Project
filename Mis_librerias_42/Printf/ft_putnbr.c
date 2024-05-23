@@ -6,13 +6,13 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 10:00:52 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/04/10 17:53:37 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/05/22 21:54:43 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-long	ft_sign(long n) /*aumenta en 1 caso negativo*/
+long	ft_sign(long n)
 {
 	long	nb;
 
