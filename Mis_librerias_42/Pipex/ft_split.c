@@ -6,11 +6,11 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:06:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/06/12 18:10:51 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/06/21 09:45:11 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "extras.h"
+#include "pipex.h"
 
 static size_t	count_words(char const *s, char c)
 {

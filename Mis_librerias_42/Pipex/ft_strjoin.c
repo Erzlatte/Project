@@ -1,35 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 20:52:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/06/21 09:45:14 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:07:38 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/06/21 09:54:28 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*ft_strdup(char const *src)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*new;
-	int		i;
-	int		size;
+	char	*d;
+	size_t	i;
+	size_t	j;
 
-	size = 0;
-	while (src[size])
-		++size;
-	new = ft_calloc((size + 1), sizeof(char));
-	if (!new)
-		return (NULL);
-	i = 0;
-	while (src[i])
+	d = ft_calloc((ft_strlen(s1) + (ft_strlen(s2)) + 1), sizeof(char));
+	if (d)
 	{
-		new[i] = src[i];
-		i++;
+		i = 0;
+		j = 0;
+		while (s1[i] != '\0')
+		{
+			d[j] = s1[i];
+			i++;
+			j++;
+		}
+		i = 0;
+		while (s2[i] != '\0')
+		{
+			d[j] = s2[i];
+			i++;
+			j++;
+		}
 	}
-	new[i] = '\0';
-	return (new);
+	return (d);
 }

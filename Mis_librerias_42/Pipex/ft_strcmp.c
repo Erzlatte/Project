@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 20:52:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/06/21 09:45:14 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/06/21 09:57:35 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/06/21 09:57:56 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*ft_strdup(char const *src)
+int	ft_strcmp(char *s1, char *s2)
 {
-	char	*new;
-	int		i;
-	int		size;
+	int i;
 
-	size = 0;
-	while (src[size])
-		++size;
-	new = ft_calloc((size + 1), sizeof(char));
-	if (!new)
-		return (NULL);
 	i = 0;
-	while (src[i])
-	{
-		new[i] = src[i];
+	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 		i++;
-	}
-	new[i] = '\0';
-	return (new);
+	return (s1[i] - s2[i]);
 }

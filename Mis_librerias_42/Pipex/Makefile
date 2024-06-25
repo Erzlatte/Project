@@ -6,11 +6,11 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
-#    Updated: 2024/06/19 10:24:39 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/06/21 10:10:23 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pipes.a
+NAME = pipex.a
 
 SRC = pipex.c \
 ft_bzero.c \
@@ -19,6 +19,11 @@ ft_split.c \
 ft_substr.c \
 ft_strlen.c \
 ft_strdup.c \
+ft_strcmp.c \
+ft_strjoin.c \
+ft_putendl_fd.c \
+ft_putstr_fd.c \
+pipex_extra.c \
 
 OBJTS = $(SRC:.c=.o)
 

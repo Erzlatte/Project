@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/29 20:52:36 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/06/21 09:45:14 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:06:15 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/06/21 09:53:21 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-char	*ft_strdup(char const *src)
+void	ft_putendl_fd(char *s, int fd)
 {
-	char	*new;
-	int		i;
-	int		size;
-
-	size = 0;
-	while (src[size])
-		++size;
-	new = ft_calloc((size + 1), sizeof(char));
-	if (!new)
-		return (NULL);
-	i = 0;
-	while (src[i])
+	if (!s || fd < 0)
 	{
-		new[i] = src[i];
-		i++;
+		return ;
 	}
-	new[i] = '\0';
-	return (new);
+	write(fd, s, ft_strlen(s));
+	write(fd, "\n", 1);
 }
