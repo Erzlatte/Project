@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 10:18:54 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/06/22 13:32:11 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/07/05 21:34:28 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	exec(char *cmd, char **env)
 	}
 }
 
-void	child(char **av, int *p_fd, char **env)
+void	incmd(char **av, int *p_fd, char **env)//child
 {
 	int		fd;
 
@@ -39,7 +39,7 @@ void	child(char **av, int *p_fd, char **env)
 	exec(av[2], env);
 }
 
-void	parent(char **av, int *p_fd, char **env)
+void	outcmd(char **av, int *p_fd, char **env)//parent
 {
 	int		fd;
 
@@ -52,17 +52,17 @@ void	parent(char **av, int *p_fd, char **env)
 
 int	main(int ac, char **av, char **env)
 {
-	int		p_fd[2];
+	int		fd[2];
 	pid_t	pid;
 
 	if (ac != 5)
 		error_exit(1);
-	if (pipe(p_fd) == -1)
+	if (pipe(fd) == -1)
 		exit(-1);
 	pid = fork();
 	if (pid == -1)
 		exit(-1);
 	if (!pid)
-		child(av, p_fd, env);
-	parent(av, p_fd, env);
+		incmd(av, fd, env);
+	outcmd(av, fd, env);
 }

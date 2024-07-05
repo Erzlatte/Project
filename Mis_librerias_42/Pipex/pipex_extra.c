@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 11:12:54 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/06/22 13:31:30 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/07/05 21:34:20 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,7 @@
 void	error_exit(int n_exit)
 {
 	if (n_exit == 1)
-	{
-		ft_putstr_fd("Comando tipo:\n", 2);
-		ft_putstr_fd("./pipex infile cmd cmd outfile\n", 2);
-		ft_putstr_fd("No encontrado\n", 2);
-	}
+		printf("Cmd tipo: ./pipex infile cmd cmd outfile. No encontrado\n");
 	exit(0);
 }
 
@@ -32,7 +28,10 @@ int	open_file(char *file, int in_or_out)
 	if (in_or_out == 1)
 		ret = open(file, O_WRONLY | O_CREAT | O_TRUNC, 0777);
 	if (ret == -1)
-		exit(0);
+	{
+		ft_putstr_fd("pipex: no such file or directory: ", 2);
+		ft_putendl_fd(file, 2);
+	}
 	return (ret);
 }
 
@@ -49,7 +48,7 @@ void	ft_free_tab(char **tab)
 	free(tab);
 }
 
-char	*my_getenv(char *name, char **env)
+char	*path_env(char *name, char **env)
 {
 	int		i;
 	int		j;
@@ -82,7 +81,7 @@ char	*get_path(char *cmd, char **env)
 	char	**s_cmd;
 
 	i = -1;
-	allpath = ft_split(my_getenv("PATH", env), ':');
+	allpath = ft_split(path_env("PATH", env), ':');
 	s_cmd = ft_split(cmd, ' ');
 	while (allpath[++i])
 	{

@@ -6,11 +6,11 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
-#    Updated: 2024/06/21 10:10:23 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/07/05 21:20:19 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pipex.a
+NAME = pipex
 
 SRC = pipex.c \
 ft_bzero.c \
@@ -36,7 +36,7 @@ RM = rm -f
 all: $(NAME)
 
 $(NAME): $(OBJTS)
-	$(AR) $(NAME)  $(OBJTS)
+	cc $(CFLAGS) -o $(NAME) $(OBJTS)
 
 ver:
 	echo $(OBJTS)
