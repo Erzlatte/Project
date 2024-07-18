@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 13:08:31 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/04/25 19:32:12 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/02/26 13:03:48 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/07/18 11:59:08 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "push_swap.h"
 
-size_t	ft_strlen(const char *s)
+int	ft_isdigit(char *s)
 {
-	int	i;
+	char	c;
 
-	i = 0;
-	while (s[i])
+	c = *s;
+	if ((int)c >= 48 && (int)c <= 57)
+		return (1);
+	if (((int)c == 45))
 	{
-		i++;
+		c = s[1];
+		if ((int)c >= 48 && (int)c <= 57)
+			return (1);
+		return (0);
 	}
-	return ((size_t)i);
+	return (0);
 }
