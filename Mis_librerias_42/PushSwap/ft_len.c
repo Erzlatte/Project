@@ -6,13 +6,13 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 19:43:15 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/12 19:44:59 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/08/01 10:03:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	ft_len(char **s)
+size_t	ft_strlen(char **s)
 {
 	size_t	i;
 

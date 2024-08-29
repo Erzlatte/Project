@@ -6,7 +6,7 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/20 10:03:57 by dllera-d          #+#    #+#              #
-#    Updated: 2024/04/25 11:46:08 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/08/24 11:53:38 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ $(NAME): $(OBJTS)
 ver:
 	echo $(OBJTS)
 
-clean: 
+clean:
 	$(RM) $(OBJTS)
 
 fclean: clean

@@ -5,21 +5,25 @@
 #                                                     +:+ +:+         +:+      #
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/04/25 20:07:20 by dllera-d          #+#    #+#              #
-#    Updated: 2024/07/18 11:29:42 by dllera-d         ###   ########.fr        #
+#    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
+#    Updated: 2024/08/26 10:09:37 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = pushswap
 
-SRC = push_swap.c \
-ft_strcmp.c \
-menor.c \
-mayor.c \
-ver.c \
+SRC = ft_isdigit.c \
 ft_len.c \
-ft_isdigit.c \
-
+ft_strcmp.c \
+init_a.c \
+ft_mayor.c \
+ft_menor.c \
+ft_p.c \
+push_swap.c \
+r.c \
+rr.c \
+s.c \
+ver.c \
 
 OBJTS = $(SRC:.c=.o)
 
@@ -44,3 +48,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
