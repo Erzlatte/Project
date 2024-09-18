@@ -6,7 +6,7 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
-#    Updated: 2024/08/26 10:03:54 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/09/17 13:06:47 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,9 +37,6 @@ all: $(NAME)
 
 $(NAME): $(OBJTS)
 	cc $(CFLAGS) -o $(NAME) $(OBJTS)
-
-ver:
-	echo $(OBJTS)
 
 clean: 
 	$(RM) $(OBJTS)
