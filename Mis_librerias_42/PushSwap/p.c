@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pp.c                                               :+:      :+:    :+:   */
+/*   p.c                                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:06:20 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/08/01 10:11:51 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/24 12:21:27 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ static void	push(t_nodo **dst, t_nodo **src)
 	}
 }
 
-void	pa(t_nodo **a, t_nodo **b, bool print)
+void	pa(t_nodo **a, t_nodo **b, int print)
 {
 	push(a, b);
-	if (!print)
-		ft_printf("pa\n");
+	if (print != 0)
+		printf("pa\n");
 }
 
-void	pb(t_nodo **b, t_nodo **a, bool print)
+void	pb(t_nodo **b, t_nodo **a, int print)
 {
 	push(b, a);
-	if (!print)
-		ft_printf("pb\n");
+	if (print != 0)
+		printf("pb\n");
 }

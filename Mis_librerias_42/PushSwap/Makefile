@@ -6,7 +6,7 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
-#    Updated: 2024/08/26 10:09:37 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/09/24 12:38:00 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,18 @@ SRC = ft_isdigit.c \
 ft_len.c \
 ft_strcmp.c \
 init_a.c \
-ft_mayor.c \
 ft_menor.c \
-ft_p.c \
 push_swap.c \
+p.c \
 r.c \
 rr.c \
 s.c \
+sort_stack.c \
+sort_tree.c \
+stack_init.c \
+init_a_to_b.c \
+init_b_to_a.c \
+utils_of_stack.c \
 ver.c \
 
 OBJTS = $(SRC:.c=.o)
@@ -37,9 +42,6 @@ all: $(NAME)
 
 $(NAME): $(OBJTS)
 	cc $(CFLAGS) -o $(NAME) $(OBJTS)
-
-ver:
-	echo $(OBJTS)
 
 clean: 
 	$(RM) $(OBJTS)

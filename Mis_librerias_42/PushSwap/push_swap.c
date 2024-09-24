@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 18:31:14 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/08/26 10:08:23 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/24 13:17:28 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	ascendente(int argc, char **a)
 	}
 }
 
-void	is_sorted(int argc, char **a)
+int	is_sorted(int argc, char **a)
 {
 	int		i;
 	int		j;
@@ -50,13 +50,13 @@ void	is_sorted(int argc, char **a)
 		{
 			if (ft_menor(a[j], a[i]) == 0)
 			{
-				printf("ERROR\n");
-				exit (0);
+				return (1);
 			}
 			j++;
 		}
 		i++;
 	}
+	return (0);
 }
 
 void	recurrencia(char **argv)
@@ -106,16 +106,29 @@ void	free_stack(t_nodo **stack)
 int	main(int argc, char **argv)
 {
 	t_nodo	*a;
-	//t_nodo	*b;
+	t_nodo	*b;
 
 	a = NULL;
-	//b = NULL;
+	b = NULL;
 
 	if (argc == 1 || argc == 2)
 		return (1);
 	init_stack_a(&a, argv);
-	is_sorted(argc, argv);
-	ver(a);
+	if (is_sorted(argc, argv) != 1)
+	{
+		free_stack(&a);
+		return (0);
+	}
+	else if (stack_len(a) != 0)
+	{
+		if (stack_len(a) == 2)
+			sa(&a, false);
+		else if (stack_len(a) == 3)
+			sort_three(&a);
+		else
+			sort_stacks(&a, &b);
+	}
+	//ver(a);
 	free_stack(&a);
 	return (0);
 }

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mayor.c                                            :+:      :+:    :+:   */
+/*   ft_menor.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:08:48 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/20 12:50:46 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/17 13:28:56 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	mayor(char *s1, char *s2)
+int	ft_menor(char *s1, char *s2)
 {
 	int		i;
 	char	c;
@@ -21,11 +21,11 @@ int	mayor(char *s1, char *s2)
 	c = *s1;
 	if (((int)c == 45))
 	{
-		if (s1[1] < s2[1])
+		if (s1[1] > s2[1])
 			return (0);
 		return (1);
 	}
-	if (s1[i] > s2[i])
+	if (s1[i] < s2[i])
 		return (0);
 	return (1);
 }

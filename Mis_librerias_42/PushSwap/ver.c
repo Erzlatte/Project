@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   menor.c                                            :+:      :+:    :+:   */
+/*   ver.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 13:08:48 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/20 12:46:43 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/07/12 19:28:59 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/07/31 11:05:41 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	menor(char *s1, char *s2)
+void	ver(t_nodo *stack)
 {
-	int		i;
-	char	c;
-
-	i = 0;
-	c = *s1;
-	if (((int)c == 45))
+	while (stack != NULL)
 	{
-		if (s1[1] > s2[1])
-			return (0);
-		return (1);
+		printf("*stack = %d\n", stack->num);
+		stack = stack->sig;
 	}
-	if (s1[i] < s2[i])
-		return (0);
-	return (1);
 }

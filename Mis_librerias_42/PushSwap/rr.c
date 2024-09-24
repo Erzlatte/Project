@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:27:10 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/08/01 10:35:38 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/24 12:21:52 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,24 +26,24 @@ static void	rev_rotate(t_nodo **stack)
 	last->sig->prev = last;
 }
 
-void	rra(t_nodo **a, bool print)
+void	rra(t_nodo **a, int print)
 {
 	rev_rotate(a);
-	if (!print)
-		ft_printf("rra\n");
+	if (print != 0)
+		printf("rra\n");
 }
 
-void	rrb(t_nodo **b, bool print)
+void	rrb(t_nodo **b, int print)
 {
 	rev_rotate(b);
-	if (!print)
-		ft_printf("rrb\n");
+	if (print != 0)
+		printf("rrb\n");
 }
 
-void	rrr(t_nodo **a, t_nodo **b, bool print)
+void	rrr(t_nodo **a, t_nodo **b, int print)
 {
 	rev_rotate(a);
 	rev_rotate(b);
-	if (!print)
-		ft_printf("rrr\n");
+	if (print != 0)
+		printf("rrr\n");
 }

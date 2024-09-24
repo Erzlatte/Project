@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:13:20 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/08/01 10:19:03 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/24 12:22:01 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,24 @@ static void	swap(t_nodo **top)
 	(*top)->prev = NULL;
 }
 
-void	sa(t_nodo	**a, bool print)
+void	sa(t_nodo	**a, int print)
 {
 	swap(a);
-	if (!print)
-		ft_printf("sa\n");
+	if (print != 0)
+		printf("sa\n");
 }
 
-void	sb(t_nodo **b, bool print)
+void	sb(t_nodo **b, int print)
 {
 	swap(b);
-	if (!print)
-		ft_printf("sb\n");
+	if (print != 0)
+		printf("sb\n");
 }
 
-void	ss(t_nodo **a, t_nodo **b, bool print)
+void	ss(t_nodo **a, t_nodo **b, int print)
 {
 	swap(a);
 	swap(b);
-	if (!print)
-		ft_printf("ss\n");
+	if (print != 0)
+		printf("ss\n");
 }
