@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 10:18:54 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/05 21:34:28 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:02:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	exec(char *cmd, char **env)
 	}
 }
 
-void	incmd(char **av, int *p_fd, char **env)//child
+void	incmd(char **av, int *p_fd, char **env)
 {
 	int		fd;
 
@@ -39,7 +39,7 @@ void	incmd(char **av, int *p_fd, char **env)//child
 	exec(av[2], env);
 }
 
-void	outcmd(char **av, int *p_fd, char **env)//parent
+void	outcmd(char **av, int *p_fd, char **env)
 {
 	int		fd;
 

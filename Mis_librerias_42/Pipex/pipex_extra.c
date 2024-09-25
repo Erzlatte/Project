@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 11:12:54 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/05 21:34:20 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/25 15:02:16 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	open_file(char *file, int in_or_out)
 	{
 		ft_putstr_fd("pipex: no such file or directory: ", 2);
 		ft_putendl_fd(file, 2);
+		exit (0);
 	}
 	return (ret);
 }
