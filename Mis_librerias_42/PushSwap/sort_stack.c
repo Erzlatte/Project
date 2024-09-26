@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:18:37 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/24 12:08:43 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/26 09:57:18 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 static void	rotate_both(t_nodo **a, t_nodo **b, t_nodo *cheapest_node)
 {
-	while (*b != cheapest_node->trgt
-		&& *a != cheapest_node)
+	while (*b != cheapest_node->trgt && *a != cheapest_node)
 		rr(a, b, 1);
 	current_index(*a);
 	current_index(*b);
@@ -23,8 +22,7 @@ static void	rotate_both(t_nodo **a, t_nodo **b, t_nodo *cheapest_node)
 
 static void	rev_rotate_both(t_nodo **a, t_nodo **b, t_nodo *cheapest_node) 
 {
-	while (*b != cheapest_node->trgt
-		&& *a != cheapest_node)
+	while (*b != cheapest_node->trgt && *a != cheapest_node)
 		rrr(a, b, 1);
 	current_index(*a);
 	current_index(*b);
@@ -35,11 +33,9 @@ static void	move_a_to_b(t_nodo **a, t_nodo **b)
 	t_nodo	*cheapest_node;
 
 	cheapest_node = get_cheapest(*a); 
-	if (cheapest_node->media 
-		&& cheapest_node->trgt->media)
+	if (cheapest_node->media == 0 && cheapest_node->trgt->media == 0)
 		rotate_both(a, b, cheapest_node);
-	else if (!(cheapest_node->media) 
-		&& !(cheapest_node->trgt->media))
+	else if (cheapest_node->media != 0 && cheapest_node->trgt->media != 0)
 		rev_rotate_both(a, b, cheapest_node);
 	prep_for_push(a, cheapest_node, 'a');
 	prep_for_push(b, cheapest_node->trgt, 'b');
@@ -56,7 +52,7 @@ static void	min_on_top(t_nodo **a)
 {
 	while ((*a)->num != find_min(*a)->num)
 	{
-		if (find_min(*a)->media)
+		if (find_min(*a)->media == 0)
 			ra(a, 1);
 		else
 			rra(a, 1);

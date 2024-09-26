@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:55:28 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/24 09:33:59 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/26 09:55:05 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	set_target_b(t_nodo *a, t_nodo *b)
 {
 	t_nodo	*current_a;
 	t_nodo	*target_node;
-	long			best_match_index;
+	long	best_match_index;
 
 	while (b)
 	{
@@ -24,8 +24,7 @@ static void	set_target_b(t_nodo *a, t_nodo *b)
 		current_a = a;
 		while (current_a)
 		{
-			if (current_a->num > b->num 
-				&& current_a->num < best_match_index)
+			if (current_a->num > b->num && current_a->num < best_match_index)
 			{
 				best_match_index = current_a->num;
 				target_node = current_a;

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:56:00 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/24 09:51:33 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/26 09:53:56 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	current_index(t_nodo *stack)
 	{
 		stack->index = i;
 		if (i <= median)
-			stack->media = true;
+			stack->media = 0;
 		else
-			stack->media = false;
+			stack->media = 1;
 		stack = stack->sig;
 		++i;
 	}
@@ -37,7 +37,7 @@ static void	set_target_a(t_nodo *a, t_nodo *b)
 {
 	t_nodo	*current_b;
 	t_nodo	*target_node;
-	long			best_match_index;
+	long	best_match_index;
 
 	while (a)
 	{
@@ -45,8 +45,7 @@ static void	set_target_a(t_nodo *a, t_nodo *b)
 		current_b = b;
 		while (current_b)
 		{
-			if (current_b->num < a->num 
-				&& current_b->num > best_match_index)
+			if (current_b->num < a->num && current_b->num > best_match_index)
 			{
 				best_match_index = current_b->num;
 				target_node = current_b;
@@ -71,9 +70,9 @@ static void	cost_analysis_a(t_nodo *a, t_nodo *b)
 	while (a)
 	{
 		a->cmd = a->index;
-		if (!(a->media))
+		if (a->media != 0)
 			a->cmd = len_a - (a->index);
-		if (a->trgt->media)
+		if (a->trgt->media == 0)
 			a->cmd += a->trgt->index;
 		else
 			a->cmd += len_b - (a->trgt->index);
@@ -83,7 +82,7 @@ static void	cost_analysis_a(t_nodo *a, t_nodo *b)
 
 void	set_cheapest(t_nodo *stack)
 {
-	long			cheapest_value;
+	long	cheapest_value;
 	t_nodo	*cheapest_node;
 
 	if (!stack)
@@ -98,7 +97,7 @@ void	set_cheapest(t_nodo *stack)
 		}
 		stack = stack->sig;
 	}
-	cheapest_node->mmv = true;
+	cheapest_node->mmv = 0;
 }
 
 void	init_nodes_a(t_nodo *a, t_nodo *b)

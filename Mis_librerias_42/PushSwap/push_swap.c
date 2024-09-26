@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 18:31:14 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/24 13:17:28 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/26 09:48:51 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,6 +116,7 @@ int	main(int argc, char **argv)
 	init_stack_a(&a, argv);
 	if (is_sorted(argc, argv) != 1)
 	{
+		ver(a);
 		free_stack(&a);
 		return (0);
 	}
@@ -128,7 +129,7 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
-	//ver(a);
+	ver(a);
 	free_stack(&a);
 	return (0);
 }

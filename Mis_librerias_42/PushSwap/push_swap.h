@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:23:59 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/24 12:40:37 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/09/26 09:37:08 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ typedef struct s_nodo
 	int				num;
 	int				index;
 	int				cmd;
-	bool			media;
-	bool			mmv;
+	int				media;
+	int				mmv;
 	struct s_nodo	*sig;
 	struct s_nodo	*prev;
 	struct s_nodo	*trgt;
