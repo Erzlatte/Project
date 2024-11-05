@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/09 18:31:14 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/26 09:48:51 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 17:34:37 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,48 @@ int	is_sorted(int argc, char **a)
 	return (0);
 }
 
-void	recurrencia(char **argv)
+char	**cadena(char **argv)
 {
+	char	**cdn;
+	char	*exc;
 	int		i;
 	int		j;
-	int		rep;
+	int		x;
+	int		y;
+	
+	cdn = NULL;
+	exc = NULL;
+	y = 0;
+	i = 0;
+	x = 0;
+	argv++;
+	while(*argv)
+	{
+		if (ft_len_c(*argv) >= 3)
+		{
+			j = 0;
+			while (argv[i][j])
+			{
+				if(argv[i][j] >= 48 && argv[i][j] <= 57)
+					exc[y] = argv[i][j];
+				else if (argv[i][j] == 32)
+					printf("%d", ft_atoi(exc));
+				
+				j++;
+			}
+		} else 
+		cdn[x] = *argv;
+		printf("%s\n", *argv);
+		argv++;
+	}
+	return (cdn);
+}
+
+void	recurrencia(char **argv)
+{
+	int	i;
+	int	j;
+	int	rep;
 
 	i = 1;
 	while (argv[i] != 0)
@@ -110,13 +147,11 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-
-	if (argc == 1 || argc == 2)
+	if (argc == 1)
 		return (1);
 	init_stack_a(&a, argv);
-	if (is_sorted(argc, argv) != 1)
+	if (stack_sorted(a) != 1)
 	{
-		ver(a);
 		free_stack(&a);
 		return (0);
 	}
@@ -129,7 +164,6 @@ int	main(int argc, char **argv)
 		else
 			sort_stacks(&a, &b);
 	}
-	ver(a);
 	free_stack(&a);
 	return (0);
 }

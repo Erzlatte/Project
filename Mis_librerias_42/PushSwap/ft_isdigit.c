@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:03:48 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/29 11:46:29 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 14:25:59 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	check(int x, char *s)
 	while (s[i] != 0)
 	{
 		c = s[i];
+		if((int)c == 32)
+			j = j * 1;
 		if ((int)c >= 48 && (int)c <= 57)
 			j = j * 1;
 		else

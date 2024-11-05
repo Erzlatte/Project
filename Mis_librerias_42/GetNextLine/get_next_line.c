@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:24:34 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/05/23 10:58:37 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/10/31 10:48:04 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static char	*create_substring(char *str)
 	j = 0;
 	if (!*str)
 		return ((void)((free(str))), NULL);
-	i = find_next_line_break(str, i);
+	i = find_next_line_jump(str, i);
 	new_str = malloc((ft_strlen(str) - i) + 1);
 	if (!new_str)
 		return ((void)((free(str))), NULL);

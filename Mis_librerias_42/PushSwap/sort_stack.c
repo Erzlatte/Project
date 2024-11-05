@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:18:37 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/26 09:57:18 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:02:45 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static void	rotate_both(t_nodo **a, t_nodo **b, t_nodo *cheapest_node)
 	current_index(*b);
 }
 
-static void	rev_rotate_both(t_nodo **a, t_nodo **b, t_nodo *cheapest_node) 
+static void	rev_rotate_both(t_nodo **a, t_nodo **b, t_nodo *cheapest_node)
 {
 	while (*b != cheapest_node->trgt && *a != cheapest_node)
 		rrr(a, b, 1);
@@ -32,7 +32,7 @@ static void	move_a_to_b(t_nodo **a, t_nodo **b)
 {
 	t_nodo	*cheapest_node;
 
-	cheapest_node = get_cheapest(*a); 
+	cheapest_node = get_cheapest(*a);
 	if (cheapest_node->media == 0 && cheapest_node->trgt->media == 0)
 		rotate_both(a, b, cheapest_node);
 	else if (cheapest_node->media != 0 && cheapest_node->trgt->media != 0)
@@ -45,7 +45,7 @@ static void	move_a_to_b(t_nodo **a, t_nodo **b)
 static void	move_b_to_a(t_nodo **a, t_nodo **b)
 {
 	prep_for_push(a, (*b)->trgt, 'a');
-	pa(a, b, 1); 
+	pa(a, b, 1);
 }
 
 static void	min_on_top(t_nodo **a)

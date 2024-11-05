@@ -6,7 +6,7 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
-#    Updated: 2024/09/24 12:38:00 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/11/04 17:31:31 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,9 @@ NAME = pushswap
 
 SRC = ft_isdigit.c \
 ft_len.c \
+ft_len_2.c \
 ft_strcmp.c \
+ft_atoi.c \
 init_a.c \
 ft_menor.c \
 push_swap.c \

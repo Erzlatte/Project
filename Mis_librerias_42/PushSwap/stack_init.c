@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:54:07 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/26 09:47:38 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:03:12 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ void	prep_for_push(t_nodo **stack, t_nodo *top_node, char stack_name)
 				rb(stack, 1);
 			else
 				rrb(stack, 1);
-		}	
+		}
 	}
 }

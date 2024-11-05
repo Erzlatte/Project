@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/23 13:08:05 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/31 11:30:01 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 16:48:38 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,10 +77,20 @@ void	free_errors(t_nodo **a)
 void	init_stack_a(t_nodo **a, char **argv)
 {
 	char	*n;
-	int		i;
+	char	**cdn;
 	long	j;
+	int		i;
 
 	i = 1;
+	printf("hola\n");
+	cdn = cadena(argv);
+	
+	while (cdn)
+	{
+		printf("%s", *cdn);
+		cdn++;
+	}
+	
 	recurrencia(argv);
 	while (argv[i])
 	{

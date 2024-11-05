@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:54:57 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/24 12:41:40 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 12:03:57 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	stack_len(t_nodo *stack)
 {
 	int	count;
 
-	if (!stack) 
+	if (!stack)
 		return (0);
 	count = 0;
 	while (stack)
@@ -51,7 +51,7 @@ int	stack_sorted(t_nodo *stack)
 
 t_nodo	*find_min(t_nodo *stack)
 {
-	long			min;
+	long	min;
 	t_nodo	*min_node;
 
 	if (!stack)
@@ -66,7 +66,7 @@ t_nodo	*find_min(t_nodo *stack)
 		}
 		stack = stack->sig;
 	}
-	return (min_node); 
+	return (min_node);
 }
 
 t_nodo	*find_max(t_nodo *stack)

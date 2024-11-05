@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 19:23:59 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/09/26 09:37:08 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 17:30:16 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,10 @@ int			ft_menor(char *s1, char *s2);
 void		ver(t_nodo *stack);
 size_t		ft_strlen(char **s);
 int			ft_isdigit(char *c);
+
+char		**cadena(char **argv);
+size_t		ft_len_c(char *s);
+int			ft_atoi(char *str);
 
 void		sa(t_nodo **a, int print);
 void		pa(t_nodo **a, t_nodo **b, int print);

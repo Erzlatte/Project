@@ -6,11 +6,11 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:00:41 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/02/27 12:32:28 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/04 17:33:00 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+ #include "libft.h"
 
 int	ft_atoi(char *str)
 {
