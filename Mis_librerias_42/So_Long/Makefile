@@ -1,18 +1,26 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/08/26 10:12:17 by dllera-d          #+#    #+#              #
-#    Updated: 2024/11/05 08:59:39 by dllera-d         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
 
-NAME = game
+NAME		=	so_long
+NAME_BONUS	=	so_long_bonus
 
-SRC = so_long.c \
+
+CC			=	gcc
+CFLAGS		=	-Wall -Werror -Wextra -g $(SYSTEM)
+
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S), Linux)
+	MLXFLAGS =  -Lmlx_Linux -lmlx_Linux -L ./mlx -Imlx_Linux -L ./libft -lft -lXext -lX11 -lm -lz
+endif
+ifeq ($(UNAME_S), Darwin)
+	MLXFLAGS	=	-Lmlx -lmlx -framework OpenGL -framework AppKit
+endif
+
+AR			=	ar rcs
+RM			=	rm -f
+MD			=	mkdir -p
+CP			=	cp -f
+
+SRCS = so_long.c \
 ft_check_path.c \
 ft_check.c \
 ft_close_game.c \
@@ -36,28 +44,33 @@ ft_strncmp.c \
 ft_memcmp.c \
 ft_memcpy.c \
 
-OBJTS = $(SRC:.c=.o)
+OBJS			=	$(addprefix $(OBJ_DIR), $(SRCS:.c=.o))
 
-AR = ar -rc
+$(OBJ_DIR)%.o : %.c Makefile
+	@$(MD) $(dir $@)
+	@make -sC mlx
+	@echo "$(WARN_COLOR)Compiling: $<$(NO_COLOR)"
+	@$(CC) -MT $@ -MMD -MP -c $(CFLAGS) $(INCLUDE) -Imlx   $< -o $@ 
 
-CFLAGS = -Wall -Wextra -Werror
 
-FRAME = -framework OpenGl -framework AppKit
+all:		$(NAME)
 
-RM = rm -f
+$(NAME):	$(OBJS)
+			@$(CC) $(CFLAGS) $(OBJS) -o $(NAME) $(MLXFLAGS)
+			@echo "$(OK_COLOR)So Long Compiled!$(NO_COLOR)"
 
-all: $(NAME)
+clean:
+			@make clean -sC mlx
+			@$(RM) -r $(OBJ_DIR)
+			@$(RM) get_next_line/get_next_line.o
+			@echo "$(ERROR_COLOR)Dependencies and objects removed$(NO_COLOR)"
 
-$(NAME): $(OBJTS)
-	cc $(OBJTS) $(FRAME) -o $(NAME)
+fclean:		clean
+			@echo "$(ERROR_COLOR)Programs removed$(NO_COLOR)"
 
-clean: 
-	$(RM) $(OBJTS)
+re:			fclean all
 
-fclean: clean
-	$(RM) $(NAME)
-
-re: fclean all
+.PHONY: all bonus clean fclean re 
 
 NO_COLOR		=	\x1b[0m
 OK_COLOR		=	\x1b[32;01m
@@ -67,5 +80,3 @@ WARN_COLOR		=	\x1b[33;01m
 OK_STRING		=	$(OK_COLOR)[OK]$(NO_COLOR)
 ERROR_STRING	=	$(ERROR_COLOR)[ERRORS]$(NO_COLOR)
 WARN_STRING		=	$(WARN_COLOR)[WARNINGS]$(NO_COLOR)
-
-.PHONY: all clean fclean re

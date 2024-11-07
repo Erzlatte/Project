@@ -5,73 +5,65 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/25 19:23:59 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/04 17:30:16 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/11/06 23:13:24 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/11/07 09:43:53 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-# include <unistd.h>
+
+# include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
-# include <fcntl.h>
+# include <unistd.h>
 # include <limits.h>
-# include <stdbool.h>
 
 typedef struct s_nodo
 {
+	int				value;
 	int				num;
-	int				index;
-	int				cmd;
-	int				media;
-	int				mmv;
+	int				pos;
+	int				target;
+	int				cost_a;
+	int				cost_b;
 	struct s_nodo	*sig;
-	struct s_nodo	*prev;
-	struct s_nodo	*trgt;
 }	t_nodo;
 
-int			ft_strcmp(char *s1, char *s2);
-int			ft_menor(char *s1, char *s2);
-void		ver(t_nodo *stack);
-size_t		ft_strlen(char **s);
-int			ft_isdigit(char *c);
-
-char		**cadena(char **argv);
-size_t		ft_len_c(char *s);
-int			ft_atoi(char *str);
-
-void		sa(t_nodo **a, int print);
-void		pa(t_nodo **a, t_nodo **b, int print);
-void		ra(t_nodo **a, int print);
-void		rra(t_nodo **a, int print);
-void		sb(t_nodo **a, int print);
-void		pb(t_nodo **a, t_nodo **b, int print);
-void		rb(t_nodo **a, int print);
-void		rrb(t_nodo **a, int print);
-void		ss(t_nodo **a, t_nodo **b, int print);
-void		rr(t_nodo **a, t_nodo **b, int print);
-void		rrr(t_nodo **a, t_nodo **b, int print);
-
-void		move_to_b(int j, char **a, char **b);
+long		input_is_correct(char *av);
+void		error_exit(t_nodo **stack_a, t_nodo **stack_b);
 void		free_stack(t_nodo **stack);
-void		sort_three(t_nodo **a);
-void		sort_stacks(t_nodo **a, t_nodo **b);
-int			stack_len(t_nodo *stack);
-
-void		init_nodes_a(t_nodo *a, t_nodo *b);
-void		init_nodes_b(t_nodo *a, t_nodo *b);
-void		current_index(t_nodo *stack);
-void		set_cheapest(t_nodo *stack);
-t_nodo		*get_cheapest(t_nodo *stack);
-void		prep_for_push(t_nodo **s, t_nodo *n, char c);
-
-void		init_stack_a(t_nodo **a, char **argv);
-t_nodo		*find_min(t_nodo *stack);
-t_nodo		*find_last(t_nodo *stack);
-int			stack_sorted(t_nodo *stack);
-t_nodo		*find_max(t_nodo *stack);
-void		recurrencia(char **argv);
+long int	ft_atoi(const char *str);
+void		get_num(t_nodo *stack_a, int stack_size);
+t_nodo		*stack_new(int value);
+void		stack_add(t_nodo **stack, t_nodo *new);
+t_nodo		*get_bottom(t_nodo *stack);
+int			get_nodo_size(t_nodo *stack);
+int			is_sorted(t_nodo *stack);
+void		sort_three(t_nodo **stack);
+void		sa(t_nodo **stack_a);
+void		sa(t_nodo **stack_b);
+void		ss(t_nodo **stack_a, t_nodo **stack_b);
+void		ft_putstr(char *str);
+void		ra(t_nodo **stack_a);
+void		rb(t_nodo **stack_b);
+void		rr(t_nodo **stack_a, t_nodo **stack_b);
+t_nodo		*before_bottom(t_nodo *stack);
+void		rra(t_nodo **stack_a);
+void		rrb(t_nodo **stack_b);
+void		rrr(t_nodo **stack_a, t_nodo **stack_b);
+void		pa(t_nodo **stack_a, t_nodo **stack_b);
+void		pb(t_nodo **stack_a, t_nodo **stack_b);
+void		sort(t_nodo **stack_a, t_nodo **stack_b);
+void		get_target_position(t_nodo **stack_a, t_nodo **stack_b);
+void		cost(t_nodo **stack_a, t_nodo **stack_b);
+void		cheapest_move(t_nodo **stack_a, t_nodo **stack_b);
+int			abs(int nb);
+void		do_move(t_nodo **a, t_nodo **b, int cost_a, int cost_b);
+int			position_lowest_num(t_nodo **stack);
+char		**ft_split(char const *s, char c);
+void		get_numbers(char *av, t_nodo **stack_a);
+int			is_duplicate(t_nodo *column);
+size_t		ft_strlen(const char *s);
 
 #endif

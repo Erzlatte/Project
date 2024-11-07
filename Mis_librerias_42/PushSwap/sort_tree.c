@@ -6,21 +6,37 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/18 17:35:25 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/04 12:01:47 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/07 00:29:07 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+static int	biggest_num(t_nodo *a)
+{
+	int	num;
+
+	num = a->num;
+	while (a)
+	{
+		if (a->num > num)
+			num = a->num;
+		a = a->sig;
+	}
+	return (num);
+}
+
 void	sort_three(t_nodo **a)
 {
-	t_nodo	*biggest_node;
+	int	biggest;
 
-	biggest_node = find_max(*a);
-	if (biggest_node == *a)
-		ra(a, 1);
-	else if ((*a)->sig == biggest_node)
-		rra(a, 1);
+	if (is_sorted(*a))
+		return ;
+	biggest = biggest_num(*a);
+	if ((*a)->num == biggest)
+		ra(a);
+	else if ((*a)->sig->num == biggest)
+		rra(a);
 	if ((*a)->num > (*a)->sig->num)
-		sa(a, 1);
+		sa(a);
 }

@@ -5,165 +5,80 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/09 18:31:14 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/04 17:34:37 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/11/06 23:12:18 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/11/07 00:30:52 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ascendente(int argc, char **a)
+int	is_sorted(t_nodo *stack)
 {
-	int		i;
-	int		j;
-	int		len;
-	char	*aux;
-
-	i = 1;
-	while (i < argc)
+	while (stack->sig != NULL)
 	{
-		len = i - 1;
-		j = i;
-		while (j < argc)
-		{
-			if (ft_menor(a[j], a[len]) == 0)
-				len = j;
-			j++;
-		}
-		aux = a[len];
-		a[len] = a[i - 1];
-		a[i - 1] = aux;
-		i++;
+		if (stack->value > stack->sig->value)
+			return (0);
+		stack = stack->sig;
 	}
+	return (1);
 }
 
-int	is_sorted(int argc, char **a)
+static void	push_swap(t_nodo **stack_a, t_nodo **stack_b, int stack_size)
 {
-	int		i;
-	int		j;
-
-	i = 1;
-	while (i < argc)
-	{
-		j = i;
-		while (j < argc)
-		{
-			if (ft_menor(a[j], a[i]) == 0)
-			{
-				return (1);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (stack_size == 2 && !is_sorted(*stack_a))
+		sa(stack_a);
+	else if (stack_size == 3)
+		sort_three(stack_a);
+	else if (stack_size > 3 && !is_sorted(*stack_a))
+		sort(stack_a, stack_b);
 }
 
-char	**cadena(char **argv)
+void	get_numbers(char *av, t_nodo **stack_a)
 {
-	char	**cdn;
-	char	*exc;
-	int		i;
-	int		j;
-	int		x;
-	int		y;
-	
-	cdn = NULL;
-	exc = NULL;
-	y = 0;
+	char		**param;
+	long int	n;
+	int			i;
+
+	param = ft_split(av, ' ');
 	i = 0;
-	x = 0;
-	argv++;
-	while(*argv)
+	while (param[i])
 	{
-		if (ft_len_c(*argv) >= 3)
+		if (input_is_correct(param[i]))
 		{
-			j = 0;
-			while (argv[i][j])
-			{
-				if(argv[i][j] >= 48 && argv[i][j] <= 57)
-					exc[y] = argv[i][j];
-				else if (argv[i][j] == 32)
-					printf("%d", ft_atoi(exc));
-				
-				j++;
-			}
-		} else 
-		cdn[x] = *argv;
-		printf("%s\n", *argv);
-		argv++;
-	}
-	return (cdn);
-}
-
-void	recurrencia(char **argv)
-{
-	int	i;
-	int	j;
-	int	rep;
-
-	i = 1;
-	while (argv[i] != 0)
-	{
-		j = 1;
-		rep = 0;
-		while (argv[j] != 0)
-		{
-			if (ft_strcmp(argv[i], argv[j]) == 0)
-				rep++;
-			if (rep >= 2 || ft_isdigit(argv[j]) == 0)
-			{
-				printf("ERROR\n");
-				exit (1);
-			}
-			j++;
+			n = ft_atoi(param[i]);
+			if (n > INT_MAX || n < INT_MIN)
+				error_exit(stack_a, NULL);
+			stack_add(stack_a, stack_new(n));
 		}
+		else
+			error_exit(NULL, NULL);
+		free(param[i]);
 		i++;
 	}
+	free(param);
 }
 
-void	free_stack(t_nodo **stack)
+int	main(int ac, char **av)
 {
-	t_nodo	*tmp;
-	t_nodo	*current;
+	t_nodo	*stack_a;
+	t_nodo	*stack_b;
+	int		stack_size;
+	int		i;
 
-	if (!stack)
-		return ;
-	current = *stack;
-	while (current)
+	i = 1;
+	stack_b = NULL;
+	stack_a = NULL;
+	while (i < ac)
 	{
-		tmp = current->sig;
-		current->num = 0;
-		free(current);
-		current = tmp;
+		get_numbers(av[i], &stack_a);
+		i++;
 	}
-	*stack = NULL;
-}
-
-int	main(int argc, char **argv)
-{
-	t_nodo	*a;
-	t_nodo	*b;
-
-	a = NULL;
-	b = NULL;
-	if (argc == 1)
-		return (1);
-	init_stack_a(&a, argv);
-	if (stack_sorted(a) != 1)
-	{
-		free_stack(&a);
-		return (0);
-	}
-	else if (stack_len(a) != 0)
-	{
-		if (stack_len(a) == 2)
-			sa(&a, false);
-		else if (stack_len(a) == 3)
-			sort_three(&a);
-		else
-			sort_stacks(&a, &b);
-	}
-	free_stack(&a);
+	if (is_duplicate(stack_a))
+		error_exit(&stack_a, NULL);
+	stack_size = get_nodo_size(stack_a);
+	get_num(stack_a, stack_size + 1);
+	push_swap(&stack_a, &stack_b, stack_size);
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }

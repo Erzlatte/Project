@@ -1,104 +1,78 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_a.c                                           :+:      :+:    :+:   */
+/*   start.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/23 13:08:05 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/04 16:48:38 by dllera-d         ###   ########.fr       */
+/*   Created: 2024/11/06 23:35:32 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/11/06 23:50:49 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_nodo	*point_last(t_nodo *stack)
+long	input_is_correct(char	*str)
 {
-	if (!stack)
-		return (NULL);
-	while (stack->sig)
-		stack = stack->sig;
-	return (stack);
-}
+	int	i;
 
-static void	agr_nodo(t_nodo **stack, int n)
-{
-	t_nodo	*nodo;
-	t_nodo	*last_nodo;
-
-	if (!stack)
-		return ;
-	nodo = malloc(sizeof(t_nodo));
-	if (!nodo)
-		return ;
-	nodo->sig = NULL;
-	nodo->num = n;
-	if (!(*stack))
-	{
-		*stack = nodo;
-		nodo->prev = NULL;
-	}
-	else
-	{
-		last_nodo = point_last(*stack);
-		last_nodo->sig = nodo;
-		nodo->prev = last_nodo;
-	}
-}
-
-static long	ft_atol(const char *s)
-{
-	long	result;
-	int		sign;
-
-	result = 0;
-	sign = 1;
-	if (*s == '-' || *s == '+')
-	{
-		if (*s == '-')
-			sign = -1;
-		s++;
-	}
-	while (*s)
-	{
-		result = result * 10 + (*s - '0');
-		s++;
-	}
-	return (result * sign);
-}
-
-void	free_errors(t_nodo **a)
-{
-	free_stack(a);
-	printf("Error\n");
-	exit(1);
-}
-
-void	init_stack_a(t_nodo **a, char **argv)
-{
-	char	*n;
-	char	**cdn;
-	long	j;
-	int		i;
-
-	i = 1;
-	printf("hola\n");
-	cdn = cadena(argv);
-	
-	while (cdn)
-	{
-		printf("%s", *cdn);
-		cdn++;
-	}
-	
-	recurrencia(argv);
-	while (argv[i])
-	{
-		n = argv[i];
-		j = ft_atol(n);
-		if (j > INT_MAX || j < INT_MIN)
-			free_errors(a);
-		agr_nodo(a, (int)j);
+	i = 0;
+	if ((str[i] == '-' || str[i] == '+') && (ft_strlen(str) > 1))
 		i++;
+	while (str[i] != '\0')
+	{
+		if (str[i] < '0' || str[i] > '9')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
+int	is_duplicate(t_nodo *column)
+{
+	t_nodo	*tmp;
+	t_nodo	*tmp2;
+
+	tmp = column;
+	while (tmp)
+	{
+		tmp2 = tmp->sig;
+		while (tmp2)
+		{
+			if (tmp->value == tmp2->value)
+				return (1);
+			tmp2 = tmp2->sig;
+		}
+		tmp = tmp->sig;
+	}
+	return (0);
+}
+
+void	get_num(t_nodo *stack_a, int stack_size)
+{
+	t_nodo	*ptr;
+	t_nodo	*biggest;
+	int		value;
+
+	while (--stack_size > 0)
+	{
+		ptr = stack_a;
+		biggest = NULL;
+		value = INT_MIN;
+		while (ptr)
+		{
+			if (ptr->value == INT_MIN && ptr->num == 0)
+				ptr->num = 1;
+			if (ptr->value > value && ptr->num == 0)
+			{
+				value = ptr->value;
+				biggest = ptr;
+				ptr = ptr->sig;
+			}
+			else
+				ptr = ptr->sig;
+		}
+		if (biggest != NULL)
+			biggest->num = stack_size;
 	}
 }

@@ -18,7 +18,7 @@ void	file_to_image(t_map *map)
 	map->img.collectible = mlx_xpm_file_to_image(map->mlx,
 			"xpmfiles/Coin.xpm", &a, &a);
 	map->img.enemy = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/Enemy.xpm", &a, &a);
+			"xpmfiles/enemy.xpm", &a, &a);
 	file_to_image_player(map);
 }
 

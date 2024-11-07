@@ -6,31 +6,26 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
-#    Updated: 2024/11/04 17:31:31 by dllera-d         ###   ########.fr        #
+#    Updated: 2024/11/07 09:49:10 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = pushswap
+NAME = push_swap
 
-SRC = ft_isdigit.c \
-ft_len.c \
-ft_len_2.c \
-ft_strcmp.c \
-ft_atoi.c \
-init_a.c \
-ft_menor.c \
-push_swap.c \
+SRC = push_swap.c \
 p.c \
 r.c \
 rr.c \
 s.c \
-sort_stack.c \
 sort_tree.c \
-stack_init.c \
-init_a_to_b.c \
-init_b_to_a.c \
-utils_of_stack.c \
-ver.c \
+cost.c \
+moves.c \
+pos.c \
+utils.c \
+sort.c \
+split.c \
+stack.c \
+init_a.c \
 
 OBJTS = $(SRC:.c=.o)
 
