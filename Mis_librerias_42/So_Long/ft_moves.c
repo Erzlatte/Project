@@ -1,5 +1,14 @@
-
-
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_moves.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/26 09:05:37 by dllera-d          #+#    #+#             */
+/*   Updated: 2024/11/26 09:21:45 by dllera-d         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "so_long.h"
 
@@ -8,11 +17,11 @@ static void	move_resume(t_map *map, int x, int y, int dir)
 	if (dir == UP)
 		y -= 1;
 	if (dir == DOWN)
-	y += 1;
+		y += 1;
 	if (dir == LEFT)
 		x -= 1;
 	if (dir == RIGHT)
-	x += 1;
+		x += 1;
 	if (map->array[y][x] == 'E' && map->c == 0)
 		return (ft_win(map));
 	if (map->array[y][x] == 'C')
@@ -72,7 +81,7 @@ void	move_left(t_map *map)
 		mlx_put_image_to_window(map->mlx, map->wnd, map->img.player_left1,
 			x * IMG_PXL + 8, y * IMG_PXL);
 		map->array[y][x] = 'P';
-	map->player.y = y;
+		map->player.y = y;
 	}
 }
 
