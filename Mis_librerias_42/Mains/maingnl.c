@@ -7,8 +7,8 @@ int	main ()
 	int		lines;
 
 	lines = 1;
-	fd = open("mucho.txt", O_RDONLY);
+	fd = open("hola.txt", O_RDONLY);
 
-	while ((line = getnext_lines(fd)))
+	while ((line = get_next_line(fd)))
 		printf("%d->%s", lines++, line);
 }

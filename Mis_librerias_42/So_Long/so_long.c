@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:07:34 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/26 09:07:35 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/27 17:34:09 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,5 @@ int	main(int ac, char **av)
 		mlx_key_hook(map.wnd, key_hook, &map);
 		mlx_loop(map.mlx);
 	}
-	write(2, "\033[1;31m🛑ERROR:", 18);
-	write(2, "Usage: ./so_long mapfile\n\033[0m", 30);
 	exit(EXIT_FAILURE);
 }

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:25:07 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/26 09:25:16 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/26 17:29:28 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,6 @@ void	check_valid_path(t_map *map)
 		ft_free_array(map->copy, map->y);
 		exit(EXIT_FAILURE);
 	}
+	write(2, "\033[1;32m🛑VALID: ", 19);
+	write(2, "VALID PATH\n\033[0m", 19);
 }
