@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:25:07 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/26 17:29:28 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:50:47 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,8 @@ void	check_valid_path(t_map *map)
 	move_on_paths(map->player.x, map->player.y, map);
 	if (map->c_check != 0 || map->e_check >= map->e)
 	{
-		write(2, "\033[1;31m🛑ERROR: ", 19);
-		write(2, "NO VALID PATH\n\033[0m", 19);
 		ft_free_array(map->array, map->y);
 		ft_free_array(map->copy, map->y);
 		exit(EXIT_FAILURE);
 	}
-	write(2, "\033[1;32m🛑VALID: ", 19);
-	write(2, "VALID PATH\n\033[0m", 19);
 }

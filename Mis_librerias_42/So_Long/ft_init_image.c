@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:05:15 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/26 09:05:16 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/27 22:42:21 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,19 +36,19 @@ void	file_to_image_player(t_map *map)
 
 	a = IMG_PXL;
 	map->img.player_right1 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/crtright_1.xpm", &a, &a);
+			"xpmfiles/right1.xpm", &a, &a);
 	map->img.player_right2 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/crtright.xpm", &a, &a);
+			"xpmfiles/right.xpm", &a, &a);
 	map->img.player_up1 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/ctrback_1.xpm", &a, &a);
+			"xpmfiles/up1.xpm", &a, &a);
 	map->img.player_up2 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/ctrback.xpm", &a, &a);
+			"xpmfiles/up.xpm", &a, &a);
 	map->img.player_down1 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/ctrface_1.xpm", &a, &a);
+			"xpmfiles/down1.xpm", &a, &a);
 	map->img.player_down2 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/ctrface.xpm", &a, &a);
+			"xpmfiles/down.xpm", &a, &a);
 	map->img.player_left1 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/ctrleft_1.xpm", &a, &a);
+			"xpmfiles/left1.xpm", &a, &a);
 	map->img.player_left2 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/ctrleft.xpm", &a, &a);
+			"xpmfiles/left.xpm", &a, &a);
 }

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:08:02 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/26 16:15:57 by dllera-d         ###   ########.fr       */
+/*   Updated: 2024/11/27 22:34:16 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define LEFT    0
 # define RIGHT   2
 # define ESC     53
-# define IMG_PXL 50
+# define IMG_PXL 32
 # define WND_NAME "game"
 
 # ifndef BUFFER_SIZE
