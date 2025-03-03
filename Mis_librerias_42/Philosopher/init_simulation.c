@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:37:05 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/02/24 18:47:17 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/03 11:18:35 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,13 @@ int	ft_philo_start(t_arg *arg, t_philo *philo)
 
 	i = 0;
 	while (i < arg->philo_num)
-	{	
+	{
 		philo[i].last_eat_time = ft_get_time();
 		if (pthread_create(&(philo[i].thread_id), NULL, ft_thread, &(philo[i])))
 			return (1);
 		i++;
 	}
 	ft_philo_check_finish(arg, philo);
-	/*
-	i = 0;
-	while (i < arg->philo_num)
-		pthread_join(philo[i++].thread_id, NULL);
-	*/
 	ft_free_thread(arg, philo);
 	return (0);
 }

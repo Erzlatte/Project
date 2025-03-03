@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_therad.c                                      :+:      :+:    :+:   */
+/*   free_thread.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 19:59:39 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/02/22 20:00:18 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/03 11:17:33 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_free_thread(t_arg *arg, t_philo *philo)
 	while (i < arg->philo_num)
 	{
 		pthread_mutex_destroy(&(arg->forks[i]));
-		 i++;
+		i++;
 	}
 	pthread_mutex_destroy(&(arg->print));
 	free(arg->forks);
