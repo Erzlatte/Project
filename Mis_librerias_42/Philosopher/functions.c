@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   actions.c                                          :+:      :+:    :+:   */
+/*   functions.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:36:03 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/02/24 18:54:02 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/06 13:41:21 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	ft_pass_time(long long wait_time, t_arg *arg)
 		now = ft_get_time();
 		if ((now - start) >= wait_time)
 			break ;
-		usleep(1000);
+		usleep(10);
 	}
 }
 
@@ -63,18 +63,31 @@ int	ft_philo_printf(t_arg *arg, int id, char *msg)
 
 int	ft_philo_action(t_arg *arg, t_philo *philo)
 {
-	pthread_mutex_lock(&(arg->forks[philo->left_fork]));
-	ft_philo_printf(arg, philo->id, "has taken a fork");
-	if (arg->philo_num != 1)
+	if (arg->philo_num == 1)
 	{
-		pthread_mutex_lock(&(arg->forks[philo->right_fork]));
+		pthread_mutex_lock(&(arg->forks[philo->left_fork]));
 		ft_philo_printf(arg, philo->id, "has taken a fork");
 		ft_philo_printf(arg, philo->id, "is eating");
 		philo->last_eat_time = ft_get_time();
 		philo->eat_cnt = philo->eat_cnt + 1;
 		ft_pass_time((long long)arg->time_to_eat, arg);
-		pthread_mutex_unlock(&(arg->forks[philo->right_fork]));
+		pthread_mutex_unlock(&(arg->forks[philo->left_fork]));
 	}
-	pthread_mutex_unlock(&(arg->forks[philo->left_fork]));
+	else
+	{
+		pthread_mutex_lock(&(arg->forks[philo->left_fork]));
+		ft_philo_printf(arg, philo->id, "has taken a fork");
+		if (arg->philo_num != 1)
+		{
+			pthread_mutex_lock(&(arg->forks[philo->right_fork]));
+			ft_philo_printf(arg, philo->id, "has taken a fork");
+			ft_philo_printf(arg, philo->id, "is eating");
+			philo->last_eat_time = ft_get_time();
+			philo->eat_cnt = philo->eat_cnt + 1;
+			ft_pass_time((long long)arg->time_to_eat, arg);
+			pthread_mutex_unlock(&(arg->forks[philo->right_fork]));
+		}
+		pthread_mutex_unlock(&(arg->forks[philo->left_fork]));
+	}
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:52:28 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/03/03 11:19:56 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/06 15:02:38 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_arg
 	int				time_to_sleep;
 	int				eat_times;
 	int				finish;
-	int				finished_eat;
+	int				finish_eat;
 	long long		start_time;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print;

@@ -1,5 +1,5 @@
 /* XPM */
-static char *_bf02152fb4e403b909ff59af31560accK2od2vpxx0SSleN[] = {
+static char *_ff8c3cf565e4abf8f23be160987716emhMGE2wqkKOMCwAC[] = {
 /* columns rows colors chars-per-pixel */
 "32 32 9 1 ",
 "  c black",
@@ -33,15 +33,15 @@ static char *_bf02152fb4e403b909ff59af31560accK2od2vpxx0SSleN[] = {
 "+XO@$$$$$#$# ...... $#$$$$$$$@Oo",
 "oO@$@$$$$$#$ ...... #$$$$$$$$@Oo",
 "+XO@@$@$$$$ ........ $$$$$$$@OX+",
-"+XO@$@$$$$$ ......... $$$$$$$@Oo",
+"+XO@$@$$$$$ ... ..... $$$$$$$@Oo",
 "oO@$$$$$$@$ .. .... . $$$@$$@OX+",
 "+XO@$$$@$@$ . .....  $$@$@$$@OX+",
 "oO@$$$$$@$$$ ...... $$$$@$$$@OX+",
 "+XO@$#$$$$$$$ ..... @$$$$$$$@OX+",
-"oO@$$#$$$$$$ ....... $#$$$$#$@Oo",
-"+XO@#$$$$$$$ ... .... $$$$$#@OX+",
-"oO@@@@@$@$@$ .. $ ... $$@$@@@OX+",
-"oO@OOOO@O@O@ .. $@ .. @@O@OO@OX+",
-"+XOXXXXOXOXO$  $@@$  OOOXOXXXXOo",
+"oO@$$#$$$$$$ .. .... $#$$$$#$@Oo",
+"+XO@#$$$$$$ .... .... $$$$$#@OX+",
+"oO@@@@@$@$@ ... $ ... $$@$@@@OX+",
+"oO@OOOO@O@O .. $$@ .. @@O@OO@OX+",
+"+XOXXXXOXOXO  $$@@$  OOOXOXXXXOo",
 "++o++++o+o+ooo++ooo+oooo+o++++oo"
 };

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:05:15 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/28 15:15:26 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/01/08 13:28:17 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	file_to_image(t_map *map)
 			"xpmfiles/Coin.xpm", &a, &a);
 	map->img.enemy = mlx_xpm_file_to_image(map->mlx,
 			"xpmfiles/enemy.xpm", &a, &a);
+	map->img.enemy1 = mlx_xpm_file_to_image(map->mlx,
+			"xpmfiles/enemy1.xpm", &a, &a);
 	file_to_image_player(map);
 }
 
@@ -36,7 +38,7 @@ void	file_to_image_player(t_map *map)
 
 	a = IMG_PXL;
 	map->img.player_right1 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/left.xpm", &a, &a);
+			"xpmfiles/left1.xpm", &a, &a);
 	map->img.player_right2 = mlx_xpm_file_to_image(map->mlx,
 			"xpmfiles/left.xpm", &a, &a);
 	map->img.player_up1 = mlx_xpm_file_to_image(map->mlx,
@@ -50,5 +52,5 @@ void	file_to_image_player(t_map *map)
 	map->img.player_left1 = mlx_xpm_file_to_image(map->mlx,
 			"xpmfiles/right1.xpm", &a, &a);
 	map->img.player_left2 = mlx_xpm_file_to_image(map->mlx,
-			"xpmfiles/rigth.xpm", &a, &a);
+			"xpmfiles/right.xpm", &a, &a);
 }

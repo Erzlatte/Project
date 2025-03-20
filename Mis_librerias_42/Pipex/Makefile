@@ -6,11 +6,13 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/19 10:24:36 by dllera-d          #+#    #+#              #
-#    Updated: 2024/09/17 13:06:47 by dllera-d         ###   ########.fr        #
+#    Updated: 2025/03/04 18:05:25 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = pipex
+
+NAMEBN = pipexbonus
 
 SRC = pipex.c \
 ft_bzero.c \
@@ -25,7 +27,10 @@ ft_putendl_fd.c \
 ft_putstr_fd.c \
 pipex_extra.c \
 
+SRC_BONUS = pipex_extra_bonus.c \
+
 OBJTS = $(SRC:.c=.o)
+OBJTSBN = $(SRC_BONUS:.c=.o)
 
 AR = ar -rc
 
@@ -35,11 +40,15 @@ RM = rm -f
 
 all: $(NAME)
 
+bonus: $(NAMEBN)
+
 $(NAME): $(OBJTS)
 	cc $(CFLAGS) -o $(NAME) $(OBJTS)
 
+$(NAME): $(OBJTS) $(OBJTSBN)
+	cc $(CFLAGS) -o $(NAME) $(OBJTS) $(OBJTSBN)
 clean: 
-	$(RM) $(OBJTS)
+	$(RM) $(OBJTS) $(OBJTSBN)
 
 fclean: clean
 	$(RM) $(NAME)

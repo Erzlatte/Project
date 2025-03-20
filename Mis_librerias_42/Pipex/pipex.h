@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/19 10:20:00 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/07/05 21:26:04 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/04 18:06:25 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ char	*path_env(char *name, char **env);
 char	*get_path(char *cmd, char **env);
 void	exec(char *cmd, char **env);
 void	ft_free_tab(char **tab);
+int		get_next_line(char **line);
 
 #endif

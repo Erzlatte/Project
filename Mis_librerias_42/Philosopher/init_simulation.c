@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:37:05 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/03/03 11:18:35 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/12 17:56:15 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	*ft_thread(void *argv)
 
 	philo = argv;
 	arg = philo->arg;
-	if (philo->id % 2)
-		usleep(1000);
+	if (philo->id % 2 != 1)
+		usleep(10000);
 	while (!arg->finish)
 	{
 		ft_philo_action(arg, philo);
 		if (arg->eat_times == philo->eat_cnt)
 		{
-			arg->finished_eat++;
+			arg->finish_eat++;
 			break ;
 		}
 		ft_philo_printf(arg, philo->id, "is sleeping");

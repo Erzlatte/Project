@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:04:31 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/28 13:42:01 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/01/07 14:09:43 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	map_type(t_map *map, int x, int y)
 	int	type;
 
 	type = map->array[y / IMG_PXL][x / IMG_PXL];
-	if (type == 'C' || type == 'P' || type == 'E' || type == '0')
+	if (type == 'C' || type == 'P' || type == 'E' || type == '0' || type == 'X')
 		mlx_put_image_to_window(map->mlx, map->wnd, map->img.empty, x, y);
 	if (type == 'C')
 		mlx_put_image_to_window(map->mlx, map->wnd, map->img.collectible, x, y);
@@ -27,6 +27,8 @@ static void	map_type(t_map *map, int x, int y)
 		mlx_put_image_to_window(map->mlx, map->wnd, map->img.exit, x, y);
 	else if (type == '1')
 		mlx_put_image_to_window(map->mlx, map->wnd, map->img.wall, x, y);
+	else if (type == 'X')
+		mlx_put_image_to_window(map->mlx, map->wnd, map->img.enemy, x, y);	
 }
 
 void	map_printer(t_map *map)

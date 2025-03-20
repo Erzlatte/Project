@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/26 09:18:55 by dllera-d          #+#    #+#             */
-/*   Updated: 2024/11/27 17:31:31 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/01/08 09:59:29 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	checker_params(t_map *map)
 				map->e += 1;
 			else if (map->array[y][x] == 'P')
 				map->p += 1;
-			else if (map->array[y][x] == '0' || map->array[y][x] == '1')
+			else if (map->array[y][x] == '0' || map->array[y][x] == '1' || map->array[y][x] == 'X')
 				;
 			else
 				error_map_elements(map);
