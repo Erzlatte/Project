@@ -6,11 +6,11 @@
 #    By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/22 18:56:57 by dllera-d          #+#    #+#              #
-#    Updated: 2025/02/24 18:55:35 by dllera-d         ###   ########.fr        #
+#    Updated: 2025/03/25 08:33:38 by dllera-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = philosopher
+NAME = philo
 
 SRCS = finish.c \
 functions.c \
@@ -24,7 +24,7 @@ OBJS = $(SRCS:.c=.o)
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -fsanitize=thread -g3
 
 INCLUDES = philosopher.h
 

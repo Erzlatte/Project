@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:52:28 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/03/06 15:02:38 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/21 12:06:01 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_philo
 	int				eat_cnt;
 	struct s_arg	*arg;
 	pthread_t		thread_id;
+	pthread_mutex_t	mutex;
 }	t_philo;
 
 typedef struct s_arg
@@ -42,6 +43,7 @@ typedef struct s_arg
 	long long		start_time;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	print;
+	pthread_mutex_t	finish_mutex;
 	t_philo			*philo;
 }	t_arg;
 

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:35:00 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/03/03 11:15:04 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/21 11:52:24 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_arg_init_mutex(t_arg *arg)
 	int	i;
 
 	if (pthread_mutex_init(&(arg->print), NULL))
+		return (1);
+	if (pthread_mutex_init(&(arg->finish_mutex), NULL))
 		return (1);
 	arg->forks = malloc(sizeof(pthread_mutex_t) * arg->philo_num);
 	if (!(arg->forks))
