@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:36:03 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/03/21 12:07:44 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/26 14:40:03 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,6 @@ long long	ft_get_time(void)
 	return (time_in_mill);
 }
 
-int	print_error(char *msg, int errnum)
-{
-	printf("%s: %d\n", msg, errnum);
-	return (1);
-}
-
 void	ft_pass_time(long long wait_time, t_arg *arg)
 {
 	long long	start;
@@ -40,7 +34,7 @@ void	ft_pass_time(long long wait_time, t_arg *arg)
 		if (arg->finish)
 		{
 			pthread_mutex_unlock(&(arg->finish_mutex));
-			break;
+			break ;
 		}
 		pthread_mutex_unlock(&(arg->finish_mutex));
 		now = ft_get_time();
@@ -68,7 +62,7 @@ int	ft_philo_printf(t_arg *arg, int id, char *msg)
 	return (0);
 }
 
-int	ft_philo_action(t_arg *arg, t_philo *philo)
+int	ft_philo_action_left(t_arg *arg, t_philo *philo)
 {
 	pthread_mutex_lock(&(arg->forks[philo->left_fork]));
 	ft_philo_printf(arg, philo->id, "has taken a fork");
@@ -85,5 +79,25 @@ int	ft_philo_action(t_arg *arg, t_philo *philo)
 		pthread_mutex_unlock(&(arg->forks[philo->right_fork]));
 	}
 	pthread_mutex_unlock(&(arg->forks[philo->left_fork]));
+	return (0);
+}
+
+int	ft_philo_action_right(t_arg *arg, t_philo *philo)
+{
+	pthread_mutex_lock(&(arg->forks[philo->right_fork]));
+	ft_philo_printf(arg, philo->id, "has taken a fork");
+	if (arg->philo_num != 1)
+	{
+		pthread_mutex_lock(&(arg->forks[philo->left_fork]));
+		ft_philo_printf(arg, philo->id, "has taken a fork");
+		ft_philo_printf(arg, philo->id, "is eating");
+		pthread_mutex_lock(&philo->mutex);
+		philo->last_eat_time = ft_get_time();
+		philo->eat_cnt = philo->eat_cnt + 1;
+		pthread_mutex_unlock(&philo->mutex);
+		ft_pass_time((long long)arg->time_to_eat, arg);
+		pthread_mutex_unlock(&(arg->forks[philo->left_fork]));
+	}
+	pthread_mutex_unlock(&(arg->forks[philo->right_fork]));
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 12:52:28 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/03/21 12:06:01 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/26 14:34:27 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ void		ft_pass_time(long long wait_time, t_arg *arg);
 int			ft_philo_printf(t_arg *arg, int id, char *msg);
 long long	ft_get_time(void);
 int			print_error(char *msg, int errnum);
-int			ft_philo_action(t_arg *arg, t_philo *philo);
+int			ft_philo_action_left(t_arg *arg, t_philo *philo);
+int			ft_philo_action_right(t_arg *arg, t_philo *philo);
 void		ft_free_thread(t_arg *arg, t_philo *philo);
 
 #endif

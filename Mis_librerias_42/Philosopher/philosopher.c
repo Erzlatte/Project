@@ -6,11 +6,17 @@
 /*   By: dllera-d <dllera-d@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/19 11:34:30 by dllera-d          #+#    #+#             */
-/*   Updated: 2025/03/03 11:33:58 by dllera-d         ###   ########.fr       */
+/*   Updated: 2025/03/26 14:24:31 by dllera-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosopher.h"
+
+int	print_error(char *msg, int errnum)
+{
+	printf("%s: %d\n", msg, errnum);
+	return (1);
+}
 
 int	main(int ac, char *av[])
 {
